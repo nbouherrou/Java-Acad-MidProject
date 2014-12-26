@@ -1,0 +1,83 @@
+package org.jacademie.projet1;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.jacademie.projet1.dao.ArtisteDao;
+import org.jacademie.projet1.dao.ChansonDao;
+import org.jacademie.projet1.domain.Album;
+import org.jacademie.projet1.domain.Artiste;
+import org.jacademie.projet1.domain.Chanson;
+import org.jacademie.projet1.utils.HibernateUtils;
+
+public class Main {
+	
+	private static Logger logger = LogManager.getLogger(Main.class);
+	
+	public static void main(String[] args) {
+		
+		try {
+			
+			HibernateUtils.setUp();
+			
+			ChansonDao chansonDao = new ChansonDao();
+			
+			
+			Artiste artiste = new Artiste();
+			artiste.setNom("2Pac");
+			
+			
+			Chanson chanson1 = new Chanson();
+			chanson1.setTitre("Changes");
+			chanson1.setDureeChanson(5);
+			
+			/*
+			Chanson chanson2 = new Chanson();
+			chanson2.setTitre("Life Goes On");
+			chanson2.setDureeChanson(5);
+			
+			Collection<Chanson> chansons = new ArrayList<Chanson>();
+			chansons.add(chanson1);
+			chansons.add(chanson2);
+			
+
+			Album album = new Album();
+			album.setArtiste(artiste);
+			album.setChansons(chansons);
+			album.setNom("Greatest Hits");
+			
+			artiste.setAlbums((Collection<Album>) album);
+			*/
+			
+			chansonDao.createChanson(chanson1);
+			
+			HibernateUtils.tearDown();
+			
+			/*
+			HibernateUtils.setUp();
+			
+			ArtisteDao artisteDao = new ArtisteDao();
+			
+			Artiste artiste = new Artiste();
+			
+			Album album = new Album();
+			album.setNom("Album Garou");
+			album.setArtiste(artiste);
+			
+			artiste.setNom("GAROU");
+			artiste.setAlbums(albums);
+			
+			artisteDao.createArtiste(artiste);
+			
+			HibernateUtils.tearDown();
+			*/
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

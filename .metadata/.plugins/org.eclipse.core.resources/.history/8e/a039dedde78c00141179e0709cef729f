@@ -1,0 +1,67 @@
+package org.jacademie.projet1.domain;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+
+public class Artiste {
+	
+	private Integer idArtiste;
+	
+	private String nom;
+	
+	private Collection<Album> albums;
+
+	public Artiste() {
+		super();
+		this.albums = new ArrayList<Album>();
+	}
+
+	public Artiste(Integer codeArtiste, String nom, Collection<Album> albums) {
+		super();
+		this.albums = new ArrayList<Album>();
+		this.idArtiste = codeArtiste;
+		this.nom = nom;
+		this.albums = albums;
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Artiste [codeArtiste=");
+		builder.append(idArtiste);
+		builder.append(", nom=");
+		builder.append(nom);
+		builder.append(", albums=");
+		builder.append(albums);
+		builder.append("]");
+		return builder.toString();
+	}
+
+	public Integer getIdArtiste() {
+		return idArtiste;
+	}
+
+	public void setIdArtiste(Integer idArtiste) {
+		this.idArtiste = idArtiste;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public Collection<Album> getAlbums() {
+		return albums;
+	}
+
+	public void setAlbums(Collection<Album> albums) {
+		this.albums = albums;
+	}
+
+	
+	
+}

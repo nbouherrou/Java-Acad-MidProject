@@ -1,0 +1,19 @@
+package org.jacademie.projet1.domain;
+
+public class Chanson {
+	
+	private Integer idChanson;
+	
+	private String titre;
+	
+	private Integer dureeChanson;
+	
+	private Album album;
+	
+
+	public Chanson() {
+		super();
+	}
+
+
+}

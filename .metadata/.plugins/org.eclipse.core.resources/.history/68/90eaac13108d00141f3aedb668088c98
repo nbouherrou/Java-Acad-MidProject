@@ -1,0 +1,118 @@
+package org.jacademie.projet1;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.hsqldb.lib.HashSet;
+import org.jacademie.projet1.dao.AlbumDao;
+import org.jacademie.projet1.dao.ArtisteDao;
+import org.jacademie.projet1.dao.ChansonDao;
+import org.jacademie.projet1.domain.Album;
+import org.jacademie.projet1.domain.Artiste;
+import org.jacademie.projet1.domain.Chanson;
+import org.jacademie.projet1.utils.HibernateUtils;
+
+public class Main {
+	
+	private static Logger logger = LogManager.getLogger(Main.class);
+	
+	public static void main(String[] args) {
+		
+		try {
+			
+			HibernateUtils.setUp();
+			
+			ChansonDao chansonDao = new ChansonDao();
+			ArtisteDao artisteDao = new ArtisteDao();
+			AlbumDao albumDao = new AlbumDao();
+			
+			Artiste artiste = new Artiste();
+			artiste.setNom("2Pac");
+			
+			Album album = new Album();
+			album.setNom("Greatest Hits");
+			
+			Chanson chanson1 = new Chanson();
+			chanson1.setTitre("Changes");
+			chanson1.setDureeChanson(5);
+			chanson1.setAlbum(album);
+			
+			
+			
+			album.addChanson(chanson1);
+			
+			artiste.addAlbum(album);
+			
+
+			artisteDao.createArtiste(artiste);
+			
+
+			HibernateUtils.tearDown();
+		
+			
+			
+			
+			
+			
+			/*
+			HibernateUtils.setUp();
+			
+			
+			
+			
+			Artiste artiste = new Artiste();
+			artiste.setIdArtiste(1);
+			artiste.setNom("2Pac");
+			
+			
+			
+			Chanson chanson1 = new Chanson();
+			chanson1.setIdChanson(1);
+			chanson1.setTitre("Changes");
+			chanson1.setDureeChanson(5);
+			
+
+			Album album = new Album();
+			album.setIdAlbum(1);
+			album.setNom("Greatest Hits");
+			album.addChanson(chanson1);
+			
+			
+			artiste.addAlbum(album);
+			
+			
+			
+			artisteDao.createArtiste(artiste);
+			chansonDao.createChanson(chanson1);
+			
+			albumDao.createAlbum(album);
+			
+			
+			
+			
+			
+			ArtisteDao artisteDao = new ArtisteDao();
+			
+			Artiste artiste = new Artiste();
+			
+			Album album = new Album();
+			album.setNom("Album Garou");
+			album.setArtiste(artiste);
+			
+			artiste.setNom("GAROU");
+			artiste.setAlbums(albums);
+			
+			artisteDao.createArtiste(artiste);
+			
+			HibernateUtils.tearDown();
+			*/
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

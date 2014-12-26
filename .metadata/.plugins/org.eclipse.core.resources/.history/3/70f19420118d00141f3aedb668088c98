@@ -1,0 +1,70 @@
+package org.jacademie.projet1;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.jacademie.projet1.dao.AlbumDao;
+import org.jacademie.projet1.dao.ArtisteDao;
+import org.jacademie.projet1.dao.ChansonDao;
+import org.jacademie.projet1.domain.Album;
+import org.jacademie.projet1.domain.Artiste;
+import org.jacademie.projet1.domain.Chanson;
+import org.jacademie.projet1.utils.HibernateUtils;
+
+public class Main {
+	
+	private static Logger logger = LogManager.getLogger(Main.class);
+	
+	public static void main(String[] args) {
+		
+		try {
+			
+			HibernateUtils.setUp();
+			
+			ArtisteDao artisteDao = new ArtisteDao();
+			
+			Artiste artiste = new Artiste();
+			artiste.setNom("2Pac");
+			
+			Album album = new Album();
+			album.setNom("Greatest Hits");
+			
+			Chanson chanson1 = new Chanson();
+			chanson1.setTitre("Changes");
+			chanson1.setDureeChanson(5);
+			
+			
+			Chanson chanson2 = new Chanson();
+			chanson2.setTitre("Life Goes On");
+			chanson2.setDureeChanson(3);
+			
+			
+			Chanson chanson3 = new Chanson();
+			chanson3.setTitre("Me Against the World");
+			chanson3.setDureeChanson(3);
+			
+			
+			
+			
+			
+			album.addChanson(chanson1);
+			album.addChanson(chanson2);
+			album.addChanson(chanson3);
+			
+			
+			
+			artiste.addAlbum(album);
+			
+
+			artisteDao.createArtiste(artiste);
+			
+
+			HibernateUtils.tearDown();
+		
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

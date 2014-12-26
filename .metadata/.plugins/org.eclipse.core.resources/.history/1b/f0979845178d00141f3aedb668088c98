@@ -1,0 +1,10 @@
+package org.jacademie.projet1.controller;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class ArtisteController {
+	
+	private static Logger logger = LogManager.getLogger(ArtisteController.class);
+
+}

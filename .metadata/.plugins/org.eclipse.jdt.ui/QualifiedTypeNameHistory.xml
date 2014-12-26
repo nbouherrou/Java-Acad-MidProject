@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.apache.logging.log4j.Logger"/>
+<fullyQualifiedTypeName name="org.apache.logging.log4j.LogManager"/>
+<fullyQualifiedTypeName name="org.apache.commons.lang3.exception.ExceptionUtils"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
+<fullyQualifiedTypeName name="org.hibernate.cfg.Configuration"/>
+<fullyQualifiedTypeName name="org.hibernate.service.ServiceRegistry"/>
+<fullyQualifiedTypeName name="org.hibernate.boot.registry.StandardServiceRegistryBuilder"/>
+<fullyQualifiedTypeName name="org.hibernate.SessionFactory"/>
+<fullyQualifiedTypeName name="org.hibernate.Session"/>
+<fullyQualifiedTypeName name="org.jacademie.projet1.dao.ChansonDao"/>
+<fullyQualifiedTypeName name="org.jacademie.projet1.utils.HibernateUtils"/>
+<fullyQualifiedTypeName name="org.jacademie.projet1.domain.Chanson"/>
+<fullyQualifiedTypeName name="org.jacademie.projet1.domain.Artiste"/>
+<fullyQualifiedTypeName name="org.jacademie.projet1.domain.Album"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.jacademie.projet1.dao.ArtisteDao"/>
+<fullyQualifiedTypeName name="org.hsqldb.lib.HashSet"/>
+<fullyQualifiedTypeName name="java.util.HashSet"/>
+<fullyQualifiedTypeName name="org.jacademie.projet1.dao.AlbumDao"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
+</qualifiedTypeNameHistroy>

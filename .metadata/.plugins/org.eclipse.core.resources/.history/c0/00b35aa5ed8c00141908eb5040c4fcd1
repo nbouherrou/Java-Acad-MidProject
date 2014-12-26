@@ -1,0 +1,27 @@
+package org.jacademie.projet1.domain;
+
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
+
+public class Artiste {
+	
+	private Integer idArtiste;
+	
+	private String nom;
+	
+	private Set<Album> albums;
+
+	
+	public Artiste() {
+		
+		super();
+		
+		this.albums = new HashSet<Album>();
+	}
+	
+	
+
+	
+}

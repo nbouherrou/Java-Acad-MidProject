@@ -1,0 +1,58 @@
+package org.jacademie.projet1.domain;
+
+import java.util.Collection;
+
+
+public class Artiste {
+	
+	private Integer codeArtiste;
+	
+	private String nom;
+	
+	private Collection<Album> album;
+
+	public Artiste() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Artiste(Integer codeArtiste, String nom, Collection<Album> album) {
+		super();
+		this.codeArtiste = codeArtiste;
+		this.nom = nom;
+		this.album = album;
+	}
+
+	@Override
+	public String toString() {
+		return "Artiste [codeArtiste=" + codeArtiste + ", nom=" + nom
+				+ ", album=" + album + "]";
+	}
+
+	public Integer getCodeArtiste() {
+		return codeArtiste;
+	}
+
+	public void setCodeArtiste(Integer codeArtiste) {
+		this.codeArtiste = codeArtiste;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public Collection<Album> getAlbum() {
+		return album;
+	}
+
+	public void setAlbum(Collection<Album> album) {
+		this.album = album;
+	}
+
+	
+
+}

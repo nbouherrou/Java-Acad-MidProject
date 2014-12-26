@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.jacademie.projet1.domain">
+	<class name="Artiste" table="Artiste">
+
+		<id name="idArtiste" type="integer">
+			<column name="ID_ARTISTE" />
+			<generator class="identity" />
+		</id>
+
+		<property name="nom" type="string">
+			<column name="NOM" length="80" not-null="true" />
+		</property>
+
+		<set name="albums" lazy="false" cascade="all,delete-orphan">
+			<key column="ID_ARTISTE" not-null="true" />
+			<one-to-many class="ALBUM" />
+		</set>
+
+	</class>
+</hibernate-mapping>

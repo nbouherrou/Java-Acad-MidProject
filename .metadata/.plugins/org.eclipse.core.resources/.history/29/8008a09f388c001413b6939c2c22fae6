@@ -1,0 +1,10 @@
+package org.jacademie.projet1.dao;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+public class ChansonDao {
+	
+	private static Logger logger = LogManager.getLogger(ChansonDao.class);
+
+}
