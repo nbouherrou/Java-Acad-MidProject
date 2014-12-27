@@ -26,10 +26,10 @@ public class ChansonDao {
 
 		logger.info("Chanson created.");
 	}
-	
+
 	public Chanson findChansonById(int id) throws Exception {
 
-		logger.info("Finding Client with id : " + id + "...");
+		logger.info("Finding Chanson with id : " + id + "...");
 
 		Session session = HibernateUtils.getSession();
 
@@ -42,7 +42,7 @@ public class ChansonDao {
 		HibernateUtils.closeSession(session);
 
 		if (result != null) {
-			
+
 			logger.info("Chanson found : " + result);
 		} else {
 			logger.info("Chanson not found");
@@ -50,7 +50,7 @@ public class ChansonDao {
 
 		return result;
 	}
-	
+
 	public void updateChanson(Chanson chanson) throws Exception {
 
 		logger.info("Updating Chanson : " + chanson + "...");
@@ -65,7 +65,7 @@ public class ChansonDao {
 
 		HibernateUtils.closeSession(session);
 
-		logger.info("Client updated.");
+		logger.info("Chanson updated.");
 	}
 
 }

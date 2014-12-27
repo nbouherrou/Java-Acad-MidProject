@@ -23,6 +23,7 @@ public class ArtisteDao {
 		session.getTransaction().commit();
 
 		logger.info("Artiste created.");
+		
 		HibernateUtils.closeSession(session);
 
 	}
