@@ -1,0 +1,44 @@
+package org.jacademie.projet1.utils;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+
+import org.apache.commons.io.FilenameUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.jacademie.projet1.constants.Constants;
+
+public class FileUtils {
+
+	private static Logger logger = LogManager.getLogger(FileUtils.class);
+
+	public ArrayList<String> findGoodFile() {
+		
+		ArrayList<String> pathFile = new ArrayList<String>();
+		
+		try {
+
+			Files.walk(Paths.get(Constants.path)).forEach(
+					filePath -> {
+						if (Files.isRegularFile(filePath)) {
+
+							String ext = FilenameUtils.getExtension(filePath
+									.toString());
+
+							if (ext.equals("music")) {
+								System.out.println(filePath);
+							}
+
+						}
+					});
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+}

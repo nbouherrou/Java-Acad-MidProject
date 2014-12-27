@@ -7,7 +7,7 @@ import org.jacademie.projet1.domain.Artiste;
 import org.jacademie.projet1.utils.HibernateUtils;
 
 public class ArtisteDao {
-	
+
 	private static Logger logger = LogManager.getLogger(ArtisteDao.class);
 
 	public void createArtiste(Artiste artiste) throws Exception {
@@ -17,23 +17,16 @@ public class ArtisteDao {
 		Session session = HibernateUtils.getSession();
 
 		session.beginTransaction();
-		
-		
-		if (findArtisteById(artiste.getIdArtiste()) != null) {
-			updateArtiste(artiste);
-			
-		}else {
-			session.save(artiste);
-			
-			logger.info("Artiste created.");			
-		}
-		
+
+		session.save(artiste);
+
 		session.getTransaction().commit();
 
+		logger.info("Artiste created.");
 		HibernateUtils.closeSession(session);
 
 	}
-	
+
 	public Artiste findArtisteById(int id) throws Exception {
 
 		logger.info("Finding Artiste with id : " + id + "...");
@@ -49,15 +42,15 @@ public class ArtisteDao {
 		HibernateUtils.closeSession(session);
 
 		if (result != null) {
-			
-			logger.info("Chanson found : " + result);
+
+			logger.info("Artiste found : " + result);
 		} else {
-			logger.info("Chanson not found");
+			logger.info("Artiste not found");
 		}
 
 		return result;
 	}
-	
+
 	public void updateArtiste(Artiste artiste) throws Exception {
 
 		logger.info("Updating artiste : " + artiste + "...");
