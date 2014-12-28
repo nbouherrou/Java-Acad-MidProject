@@ -1,0 +1,11 @@
+package org.jacademie.projet1.controller;
+
+public class MainControl {
+	
+	public void mainControl(){
+		
+		
+		
+	}
+
+}

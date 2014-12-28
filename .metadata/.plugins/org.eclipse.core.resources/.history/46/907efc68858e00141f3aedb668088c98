@@ -30,10 +30,11 @@ public class Main {
 
 			goodPath = fileUtils.isGoodFile(pathList);
 
+
 			if (!goodPath.isEmpty()) {
 
 				goodPath.forEach(path -> {
-
+					
 					ctrl.mainControl(path);
 
 				});

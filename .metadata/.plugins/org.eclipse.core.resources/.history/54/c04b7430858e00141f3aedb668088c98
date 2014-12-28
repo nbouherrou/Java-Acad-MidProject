@@ -1,5 +1,7 @@
 package org.jacademie.projet1;
 
+import java.nio.charset.Charset;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 
@@ -7,7 +9,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jacademie.projet1.constants.Constants;
 import org.jacademie.projet1.controller.MainControl;
+import org.jacademie.projet1.dao.AlbumDao;
+import org.jacademie.projet1.dao.ArtisteDao;
+import org.jacademie.projet1.dao.ChansonDao;
+import org.jacademie.projet1.domain.Album;
+import org.jacademie.projet1.domain.Artiste;
+import org.jacademie.projet1.domain.Chanson;
 import org.jacademie.projet1.utils.FileUtils;
+import org.jacademie.projet1.utils.HibernateUtils;
 
 public class Main {
 
@@ -30,11 +39,12 @@ public class Main {
 
 			goodPath = fileUtils.isGoodFile(pathList);
 
+
 			if (!goodPath.isEmpty()) {
 
 				goodPath.forEach(path -> {
-
-					ctrl.mainControl(path);
+					
+					mainControl.mainControl(path);
 
 				});
 
