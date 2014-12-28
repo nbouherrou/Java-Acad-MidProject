@@ -1,9 +1,13 @@
 package org.jacademie.projet1.dao;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.jacademie.projet1.domain.Album;
+import org.jacademie.projet1.domain.Artiste;
 import org.jacademie.projet1.utils.HibernateUtils;
 
 public class AlbumDao {
@@ -66,6 +70,52 @@ public class AlbumDao {
 		HibernateUtils.closeSession(session);
 
 		logger.info("Album updated. \n");
+	}
+
+	public List<Album> retrieveAllAlbums() throws Exception {
+
+		logger.info("Retrieving all Albums...");
+
+		Session session = HibernateUtils.getSession();
+
+		session.beginTransaction();
+
+		Criteria criteria = session.createCriteria(Album.class);
+
+		List<Album> result = criteria.list();
+
+		session.getTransaction().commit();
+
+		HibernateUtils.closeSession(session);
+
+		logger.info("Albums retrieved : " + result.size());
+
+		return result;
+	}
+
+	public List<Album> deleteAllAlbums() throws Exception {
+
+		logger.info("Deleting all Artistes...");
+
+		Session session = HibernateUtils.getSession();
+
+		session.beginTransaction();
+
+		Criteria criteria = session.createCriteria(Album.class);
+
+		List<Album> result = criteria.list();
+
+		result.forEach(resultat -> {
+			session.delete(resultat);
+		});
+
+		session.getTransaction().commit();
+
+		HibernateUtils.closeSession(session);
+
+		logger.info("Albums retrieved : " + result.size());
+
+		return result;
 	}
 
 }
