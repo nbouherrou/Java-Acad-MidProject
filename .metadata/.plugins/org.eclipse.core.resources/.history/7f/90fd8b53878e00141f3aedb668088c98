@@ -65,7 +65,7 @@ public class AlbumDao {
 
 		HibernateUtils.closeSession(session);
 
-		logger.info("Album updated. \n");
+		logger.info("Album updated.");
 	}
 
 }

@@ -17,7 +17,7 @@ public class Main {
 
 		try {
 
-			logger.info("Welcome to MUSIC App !!!!!!!!!!!!!! \n");
+			logger.info("Welcome to MUSIC App !!!!!!!!!!!!!!");
 
 			FileUtils fileUtils = new FileUtils();
 			MainControl ctrl = new MainControl();
@@ -39,7 +39,7 @@ public class Main {
 				});
 
 			} else {
-				logger.info("No correct files are found !!!  \n");
+				logger.info("No correct files are found !!!");
 			}
 
 		} catch (Exception e) {

@@ -43,7 +43,7 @@ public class AlbumDao {
 
 		if (result != null) {
 
-			logger.info("Album found : " + result);
+			logger.info("Album found : " + result + " \n");
 		} else {
 			logger.info("Album not found");
 		}

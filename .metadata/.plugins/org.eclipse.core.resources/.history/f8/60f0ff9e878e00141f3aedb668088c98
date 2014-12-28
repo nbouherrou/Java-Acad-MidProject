@@ -39,7 +39,7 @@ public class Main {
 				});
 
 			} else {
-				logger.info("No correct files are found !!!  \n");
+				logger.info("No correct files are found !!!");
 			}
 
 		} catch (Exception e) {

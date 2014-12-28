@@ -44,7 +44,7 @@ public class ArtisteDao {
 
 		if (result != null) {
 
-			logger.info("Artiste found : " + result);
+			logger.info("Artiste found : " + result + "\n");
 		} else {
 			logger.info("Artiste not found");
 		}

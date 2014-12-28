@@ -3358,3 +3358,91 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Duplicated 
 2014-12-28 12:39:26,186 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
 2014-12-28 12:39:26,186 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2014-12-28 12:39:26,186 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:47:21,248 [Worker-496] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:47:21,249 [Worker-496] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:47:21,250 [Worker-496] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:47:21,250 [Worker-496] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:47:40,257 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:47:40,258 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:47:40,260 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:47:40,260 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:47:54,866 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:47:54,867 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:47:54,868 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:47:54,868 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:48:04,498 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:48:04,498 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:48:04,499 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:48:04,499 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:48:11,112 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:48:11,113 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:48:11,114 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:48:11,114 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:49:05,484 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:49:05,484 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-12-28 12:49:05,485 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:49:05,485 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:49:26,866 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:49:26,866 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:49:26,867 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:49:26,867 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:49:46,850 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:49:46,851 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:49:46,853 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:49:46,853 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:50:28,426 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:50:28,427 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-12-28 12:50:28,427 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:50:28,427 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:50:35,564 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:50:35,565 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-12-28 12:50:35,565 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:50:35,566 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:50:58,635 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:50:58,636 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-12-28 12:50:58,636 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:50:58,636 [Worker-476] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:52:06,962 [Worker-496] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:52:06,963 [Worker-496] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:52:06,964 [Worker-496] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:52:06,964 [Worker-496] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:52:28,147 [Worker-496] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:52:28,148 [Worker-496] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:52:28,149 [Worker-496] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:52:28,149 [Worker-496] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:52:44,418 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:52:44,418 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:52:44,420 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:52:44,420 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:53:29,081 [Worker-497] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:53:29,081 [Worker-497] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-12-28 12:53:29,083 [Worker-497] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:53:29,083 [Worker-497] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:53:54,906 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:53:54,906 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-12-28 12:53:54,907 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:53:54,907 [Worker-498] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:56:04,141 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:56:04,141 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2014-12-28 12:56:04,145 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:56:04,145 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:56:31,285 [Worker-499] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:56:31,285 [Worker-499] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:56:31,286 [Worker-499] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:56:31,287 [Worker-499] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:56:40,582 [Worker-500] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:56:40,582 [Worker-500] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:56:40,583 [Worker-500] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:56:40,583 [Worker-500] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:56:48,933 [Worker-499] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:56:48,934 [Worker-499] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:56:48,934 [Worker-499] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:56:48,934 [Worker-499] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:57:55,714 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:57:55,715 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:57:55,716 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:57:55,716 [Worker-494] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources
+2014-12-28 12:58:53,938 [Worker-501] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:58:53,940 [Worker-501] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 5 resources
+2014-12-28 12:58:53,941 [Worker-501] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2014-12-28 12:58:53,941 [Worker-501] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/rbo/Java-Acad-MidProject/projet1/src/test/resources

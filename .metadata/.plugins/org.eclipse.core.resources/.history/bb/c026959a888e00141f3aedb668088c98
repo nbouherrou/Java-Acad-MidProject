@@ -43,7 +43,7 @@ public class ChansonDao {
 
 		if (result != null) {
 
-			logger.info("Chanson found : " + result);
+			logger.info("Chanson found : " + result + "\n");
 		} else {
 			logger.info("Chanson not found");
 		}

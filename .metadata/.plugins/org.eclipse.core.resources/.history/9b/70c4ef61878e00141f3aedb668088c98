@@ -24,7 +24,7 @@ public class ChansonDao {
 
 		HibernateUtils.closeSession(session);
 
-		logger.info("Chanson created. \n");
+		logger.info("Chanson created.");
 	}
 
 	public Chanson findChansonById(int id) throws Exception {
@@ -65,7 +65,7 @@ public class ChansonDao {
 
 		HibernateUtils.closeSession(session);
 
-		logger.info("Chanson updated. \n");
+		logger.info("Chanson updated.");
 	}
 
 }

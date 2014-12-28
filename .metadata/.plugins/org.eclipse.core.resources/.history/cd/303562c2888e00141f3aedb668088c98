@@ -84,12 +84,12 @@ public class MainControl {
 												album1.setIdAlbum(codeAlbum);
 												album1.setNom(nomAlbum);
 
-												Chanson chanson = new Chanson();
-												chanson.setIdChanson(numeroChanson);
-												chanson.setTitre(titreChanson);
-												chanson.setDureeChanson(dureeChanson);
+												Chanson chanson1 = new Chanson();
+												chanson1.setIdChanson(numeroChanson);
+												chanson1.setTitre(titreChanson);
+												chanson1.setDureeChanson(dureeChanson);
 
-												album1.addChanson(chanson);
+												album1.addChanson(chanson1);
 
 												artiste.addAlbum(album1);
 
