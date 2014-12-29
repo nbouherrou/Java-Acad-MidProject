@@ -105,13 +105,13 @@ public class AlbumDao {
 
 		List<Album> result = criteria.list();
 
-		result.forEach( resultat -> session.delete(resultat) );
+		result.forEach(resultat -> { session.delete(resultat); });
 
 		session.getTransaction().commit();
 
 		HibernateUtils.closeSession(session);
 
-		logger.info("Albums deleted : " + result.size());
+		logger.info("Albums retrieved : " + result.size());
 
 		return result;
 	}

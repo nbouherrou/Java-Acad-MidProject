@@ -63,7 +63,7 @@ public class MainControl {
 
 												if (chansonDao
 														.findChansonById(numeroChanson) != null) {
-													logger.info("Nothing has changed!");
+
 												} else {
 
 													Chanson chanson1 = new Chanson();

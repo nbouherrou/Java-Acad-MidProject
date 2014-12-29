@@ -106,13 +106,13 @@ public class ArtisteDao {
 		
 		List<Artiste> result = criteria.list();
 		
-		result.forEach( resultat -> session.delete(resultat) );
+		result.forEach( resultat -> { session.delete(resultat); });
 
 		session.getTransaction().commit();
 
 		HibernateUtils.closeSession(session);
 
-		logger.info("Artistes deleted : " + result.size() + "\n");
+		logger.info("Artistes deleted : " + result.size());
 
 		return result;
 	}

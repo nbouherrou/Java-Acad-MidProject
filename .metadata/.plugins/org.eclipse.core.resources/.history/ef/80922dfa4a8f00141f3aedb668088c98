@@ -105,7 +105,7 @@ public class AlbumDao {
 
 		List<Album> result = criteria.list();
 
-		result.forEach( resultat -> session.delete(resultat) );
+		result.forEach(resultat -> { session.delete(resultat); });
 
 		session.getTransaction().commit();
 

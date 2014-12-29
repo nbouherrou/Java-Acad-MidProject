@@ -107,13 +107,13 @@ public class ChansonDao {
 		
 		List<Chanson> result = criteria.list();
 		
-		result.forEach( resultat -> session.delete(resultat) );
+		result.forEach( resultat -> { session.delete(resultat); });
 
 		session.getTransaction().commit();
 
 		HibernateUtils.closeSession(session);
 
-		logger.info("Chansons deleted : " + result.size());
+		logger.info("Chansons retrieved : " + result.size());
 
 		return result;
 	}

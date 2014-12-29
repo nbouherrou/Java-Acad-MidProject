@@ -106,7 +106,7 @@ public class ArtisteDao {
 		
 		List<Artiste> result = criteria.list();
 		
-		result.forEach( resultat -> session.delete(resultat) );
+		result.forEach( resultat -> { session.delete(resultat); });
 
 		session.getTransaction().commit();
 
