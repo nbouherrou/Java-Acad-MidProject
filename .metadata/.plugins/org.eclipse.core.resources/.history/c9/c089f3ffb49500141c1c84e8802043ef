@@ -1,0 +1,25 @@
+package org.jacademie.projet1;
+
+import java.io.File;
+import java.nio.file.Path;
+import java.util.ArrayList;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.jacademie.projet1.constants.Constants;
+import org.jacademie.projet1.controller.MainControl;
+import org.jacademie.projet1.dao.ArtisteDao;
+import org.jacademie.projet1.utils.FileUtils;
+import org.jacademie.projet1.utils.HibernateUtils;
+
+public class Main {
+
+	private static Logger logger = LogManager.getLogger(Main.class);
+
+	public static void main(String[] args) {
+
+	
+
+	}
+
+}

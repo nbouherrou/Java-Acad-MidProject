@@ -9,7 +9,7 @@ import org.hibernate.service.ServiceRegistry;
 public class HibernateUtils {
 	
 
-	private static SessionFactory sessionFactory;
+	private static SessionFactory sessionFactory = null;
 	
 	
 
