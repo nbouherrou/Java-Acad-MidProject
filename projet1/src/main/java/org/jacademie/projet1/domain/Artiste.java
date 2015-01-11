@@ -11,7 +11,6 @@ public class Artiste {
 	private String nom;
 	
 	private Set<Album> albums;
-	
 
 	
 	public Artiste() {
@@ -48,18 +47,6 @@ public class Artiste {
 
 
 
-	public Integer getIdArtiste() {
-		return idArtiste;
-	}
-
-
-
-	public void setIdArtiste(Integer idArtiste) {
-		this.idArtiste = idArtiste;
-	}
-
-
-
 	public String getNom() {
 		return nom;
 	}
@@ -83,7 +70,18 @@ public class Artiste {
 	}
 
 
-	
+
+	public Integer getIdArtiste() {
+		return idArtiste;
+	}
+
+
+
+	public void setIdArtiste(Integer idArtiste) {
+		this.idArtiste = idArtiste;
+	}
+
+
 	
 	
 
