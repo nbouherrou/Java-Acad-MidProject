@@ -6,6 +6,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
 import org.jacademie.projet1.domain.Album;
 import org.jacademie.projet1.domain.Chanson;
 import org.jacademie.projet1.utils.HibernateUtils;
@@ -54,6 +55,7 @@ public class ChansonDao {
 
 		return result;
 	}
+	
 
 	public void updateChanson(Chanson chanson) throws Exception {
 
@@ -118,5 +120,6 @@ public class ChansonDao {
 		return result;
 	}
 	
-
+	
+	
 }
