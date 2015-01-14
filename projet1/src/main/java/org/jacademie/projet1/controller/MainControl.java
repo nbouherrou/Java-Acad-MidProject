@@ -92,7 +92,7 @@ public class MainControl {
 					Integer dureeChanson = Integer.parseInt(record
 							.get(Constants.DUREE_CHANSON));
 					
-					// Creation des ID (Album , Chanson) 
+					// Création des ID (Album , Chanson) 
 					
 					AlbumId 	albumID 	= new AlbumId(codeAlbum,codeArtiste);
 					

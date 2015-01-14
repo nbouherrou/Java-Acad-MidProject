@@ -66,8 +66,7 @@ public class Main {
 					
 					/*
 					
-					fileUtils.moveFile(path);
-					
+					fileUtils.moveFile(path);	
 					
 					*/
 					

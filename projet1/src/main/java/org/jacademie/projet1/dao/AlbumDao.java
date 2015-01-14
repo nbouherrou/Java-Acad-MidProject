@@ -46,7 +46,7 @@ public class AlbumDao {
 	}
 
 	/**
-	 * Recupere un objet Album de la BDD a partir de son identifiant (objet AlbumId)
+	 * Recupère un objet Album de la BDD à partir de son identifiant (objet AlbumId)
 	 * 
 	 * @param albumID		: identifiant d'un album
 	 * @return				: album
@@ -81,7 +81,7 @@ public class AlbumDao {
 	}
 
 	/**
-	 * Met a jour les données (enfants aussi, Chansons) d'un objet Album en les persistant en BDD.
+	 * Met à jour les données (enfants aussi, Chansons) d'un objet Album en les persistant en BDD.
 	 * @param album			: objet album
 	 * @throws Exception
 	 */
@@ -103,7 +103,7 @@ public class AlbumDao {
 	}
 
 	/**
-	 * Recupere la liste de tous les albums en BDD.
+	 * Recupère la liste de tous les albums en BDD.
 	 * @return
 	 * @throws Exception
 	 */
@@ -155,6 +155,5 @@ public class AlbumDao {
 
 		return result;
 	}
-
 
 }

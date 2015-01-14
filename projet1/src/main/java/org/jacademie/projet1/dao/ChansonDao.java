@@ -47,7 +47,7 @@ public class ChansonDao {
 	}
 	
 	/**
-	 * Recupere un objet Artiste de la BDD a partir de son identifiant (objet chansonID).
+	 * Recupère un objet Artiste de la BDD à partir de son identifiant (objet chansonID).
 	 * 
 	 * @param chansonID		: identifiant d'une chanson
 	 * @return
@@ -83,7 +83,7 @@ public class ChansonDao {
 	
 	
 	/**
-	 * Met a jour les données d'un objet Chanson en les persistant en BDD.
+	 * Met à jour les données d'un objet Chanson en les persistant en BDD.
 	 * @param chanson		: objet Chanson
 	 * @throws Exception
 	 */
@@ -105,7 +105,7 @@ public class ChansonDao {
 	}
 	
 	/**
-	 * Recupere la liste de toutes les chansons en BDD.
+	 * Récupère la liste de toutes les chansons en BDD.
 	 * @return
 	 * @throws Exception
 	 */
@@ -157,7 +157,5 @@ public class ChansonDao {
 
 		return result;
 	}
-	
-	
 	
 }
