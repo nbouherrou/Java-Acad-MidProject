@@ -32,9 +32,9 @@ public class FileUtils {
 
 	/**
 	 * Récupère dans un dossier les chemins des fichiers qui ont une extension donnée.
-	 * @param 	path			: chemin vers un répertoire
-	 * @param 	extension		: extension des fichiers cibles
-	 * @return	ArrayList<Path>	: liste de chemins vers les fichiers avec la bonne extension
+	 * @param 	String	path			: chemin vers un répertoire
+	 * @param 	String	extension		: extension des fichiers cibles
+	 * @return	ArrayList<Path>			: liste de chemins vers les fichiers avec la bonne extension
 	 */
 	public ArrayList<Path> getFilesInDirectoryWithExtension(String path,
 			String extension) {
@@ -88,8 +88,8 @@ public class FileUtils {
 	/**
 	 * Filtre les fichiers selon format (CVS).
 	 * Les chemins retenus sont relatifs aux fichiers sans erreurs (aucune ligne erroné)
-	 * @param 		pathList		: liste de chemins 
-	 * @return 		ArrayList<Path> : liste de chemins des fichiers valides
+	 * @param 		ArrayList<Path>		pathList		: liste de chemins 
+	 * @return 		ArrayList<Path> 					: liste de chemins des fichiers valides
 	 */
 	public ArrayList<Path> filterGoodFiles(ArrayList<Path> pathList) {
 
@@ -139,7 +139,7 @@ public class FileUtils {
 
 	/**
 	 * Deplace un fichier vers le répertoire "src/ressources/precessed"
-	 * @param 		path	: chemin du fichier
+	 * @param 		Path	path	: chemin du fichier
 	 * @return		Boolean
 	 */
 	public Boolean moveFile(Path path) {

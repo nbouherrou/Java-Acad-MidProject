@@ -24,8 +24,9 @@ public class ArtisteDao {
 
 	/**
 	 * Persiste un Artiste en BDD.
-	 * @param artiste		: objet Artiste
-	 * @throws Exception
+	 * 
+	 * @param 	Artiste		artiste		: objet Artiste
+	 * @throws 	Exception
 	 */
 	public void createArtiste(Artiste artiste) throws Exception {
 
@@ -46,10 +47,11 @@ public class ArtisteDao {
 	}
 	
 	/**
-	 * Recupère un objet Artiste de la BDD à partir de son identifiant
-	 * @param id		: identifiant de l'artiste
-	 * @return
-	 * @throws Exception
+	 * Recupère un objet Artiste de la BDD à partir de son identifiant.
+	 * 
+	 * @param 		int id		: identifiant de l'artiste
+	 * @return		Artiste
+	 * @throws 		Exception
 	 */
 	public Artiste findArtisteById(int id) throws Exception {
 
@@ -78,8 +80,9 @@ public class ArtisteDao {
 	
 	/**
 	 * Met à jour les données (enfants aussi, Albums, Chansons) d'un objet Artiste en les persistant en BDD.
-	 * @param artiste		: objet Artiste	
-	 * @throws Exception
+	 * 
+	 * @param 		Artiste	artiste		: objet Artiste	
+	 * @throws 		Exception
 	 */
 	public void updateArtiste(Artiste artiste) throws Exception {
 
@@ -100,10 +103,11 @@ public class ArtisteDao {
 
 	/**
 	 * Recupere la liste de tous les Artiste en BDD.
-	 * @return
-	 * @throws Exception
+	 * 
+	 * @return		List<Artiste>
+	 * @throws 		Exception
 	 */
-	public Artiste retrieveAllArtistes() throws Exception {
+	public List<Artiste> retrieveAllArtistes() throws Exception {
 
 		logger.info("Retrieving all Artistes...");
 
@@ -121,15 +125,15 @@ public class ArtisteDao {
 
 		logger.info("Artistes retrieved : " + result.size());
 
-		return result.get(0);
+		return result;
 	}
 	
 	/**
 	 * Efface tous les artiste en BDD.
-	 * @return
+	 * 
 	 * @throws Exception
 	 */
-	public List<Artiste> deleteAllArtistes() throws Exception {
+	public void deleteAllArtistes() throws Exception {
 
 		logger.info("Deleting all Artistes...");
 
@@ -149,7 +153,6 @@ public class ArtisteDao {
 
 		logger.info("Artistes deleted : " + result.size() + "\n");
 
-		return result;
 	}
 
 }

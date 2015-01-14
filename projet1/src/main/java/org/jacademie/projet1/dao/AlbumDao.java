@@ -25,8 +25,8 @@ public class AlbumDao {
 	/**
 	 * Persiste un Album en BDD.
 	 * 
-	 * @param album			: Objet Album
-	 * @throws Exception
+	 * @param 		Album	album		: Objet Album
+	 * @throws 		Exception
 	 */
 	public void createAlbum(Album album) throws Exception {
 
@@ -48,9 +48,9 @@ public class AlbumDao {
 	/**
 	 * Recupère un objet Album de la BDD à partir de son identifiant (objet AlbumId)
 	 * 
-	 * @param albumID		: identifiant d'un album
-	 * @return				: album
-	 * @throws Exception
+	 * @param 		AlbumId albumID		: identifiant d'un album
+	 * @return		Album				: album
+	 * @throws 		Exception
 	 * 
 	 * @see AlbumId
 	 */
@@ -82,8 +82,9 @@ public class AlbumDao {
 
 	/**
 	 * Met à jour les données (enfants aussi, Chansons) d'un objet Album en les persistant en BDD.
-	 * @param album			: objet album
-	 * @throws Exception
+	 * 
+	 * @param 	Album	album		: objet album
+	 * @throws 	Exception
 	 */
 	public void updateAlbum(Album album) throws Exception {
 
@@ -104,8 +105,9 @@ public class AlbumDao {
 
 	/**
 	 * Recupère la liste de tous les albums en BDD.
-	 * @return
-	 * @throws Exception
+	 * 
+	 * @return		List<Album> 
+	 * @throws 		Exception
 	 */
 	public List<Album> retrieveAllAlbums() throws Exception {
 
@@ -130,10 +132,10 @@ public class AlbumDao {
 
 	/**
 	 * Efface tous les albums en BDD.
-	 * @return
-	 * @throws Exception
+	 * 
+	 * @throws 	Exception
 	 */
-	public List<Album> deleteAllAlbums() throws Exception {
+	public void deleteAllAlbums() throws Exception {
 
 		logger.info("Deleting all Artistes...");
 
@@ -152,8 +154,6 @@ public class AlbumDao {
 		HibernateUtils.closeSession(session);
 
 		logger.info("Albums deleted : " + result.size());
-
-		return result;
 	}
 
 }

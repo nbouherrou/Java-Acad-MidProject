@@ -55,10 +55,10 @@ public class Chanson implements java.io.Serializable {
 	/**
 	 * Constructeur avec parametres de la classe Chanson.
 	 * 
-	 * @param chansonID			: identifiant d'une chanson (objet chansonID , modelisation d'une clée primaire composées)
-	 * @param titre				: titre de la chanson
-	 * @param dureeChanson		: durée de la chanson
-	 * @param album				: l'album auquel cette chanson appartient
+	 * @param ChansonId	chansonID			: identifiant d'une chanson (objet chansonID , modelisation d'une clée primaire composées)
+	 * @param String	titre				: titre de la chanson
+	 * @param Integer	dureeChanson		: durée de la chanson
+	 * @param Album		album				: l'album auquel cette chanson appartient
 	 * 
 	 * @see chansonID
 	 */

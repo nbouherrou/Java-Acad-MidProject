@@ -55,9 +55,9 @@ public class Artiste implements java.io.Serializable {
 	/**
 	 * Constructeur avec parametres de la classe Artiste.
 	 * 
-	 * @param idArtiste		: identifiant d'un artiste (clée primaire de la table)
-	 * @param nom			: nom de l'artiste
-	 * @param albums		: liste des albums appartenant à cet artiste	
+	 * @param Integer		idArtiste		: identifiant d'un artiste (clée primaire de la table)
+	 * @param String		nom			: nom de l'artiste
+	 * @param Set<Album>	albums		: liste des albums appartenant à cet artiste	
 	 */
 	public Artiste(Integer idArtiste, String nom, Set<Album> albums) {
 		super();
@@ -78,7 +78,7 @@ public class Artiste implements java.io.Serializable {
 
 	/**
 	 * Ajout d'un album pour cet artiste.
-	 * @param album
+	 * @param Album	album
 	 */
 	public void addAlbum(Album album) {
 

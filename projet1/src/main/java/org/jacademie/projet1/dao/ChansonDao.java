@@ -26,8 +26,8 @@ public class ChansonDao {
 
 	/**
 	 * Persiste un Artiste en BDD.
-	 * @param chanson		: objet Artiste
-	 * @throws Exception
+	 * @param 		Chanson		chanson		: objet Artiste
+	 * @throws 		Exception
 	 */
 	public void createChanson(Chanson chanson) throws Exception {
 
@@ -49,9 +49,9 @@ public class ChansonDao {
 	/**
 	 * Recupère un objet Artiste de la BDD à partir de son identifiant (objet chansonID).
 	 * 
-	 * @param chansonID		: identifiant d'une chanson
-	 * @return
-	 * @throws Exception
+	 * @param 		ChansonId		chansonID		: identifiant d'une chanson
+	 * @return		Chanson
+	 * @throws 		Exception
 	 * 
 	 * @see ChansonId
 	 */
@@ -84,8 +84,9 @@ public class ChansonDao {
 	
 	/**
 	 * Met à jour les données d'un objet Chanson en les persistant en BDD.
-	 * @param chanson		: objet Chanson
-	 * @throws Exception
+	 * 
+	 * @param 		Chanson		chanson		: objet Chanson
+	 * @throws 		Exception
 	 */
 	public void updateChanson(Chanson chanson) throws Exception {
 
@@ -106,8 +107,9 @@ public class ChansonDao {
 	
 	/**
 	 * Récupère la liste de toutes les chansons en BDD.
-	 * @return
-	 * @throws Exception
+	 * 
+	 * @return		List<Chanson>
+	 * @throws 		Exception
 	 */
 	public List<Chanson> retrieveAllChansons() throws Exception {
 
@@ -132,10 +134,10 @@ public class ChansonDao {
 	
 	/**
 	 * Efface toutes les chansons de la BDD.
-	 * @return
+	 * 
 	 * @throws Exception
 	 */
-	public List<Chanson> deleteAllAlbums() throws Exception {
+	public void deleteAllAlbums() throws Exception {
 
 		logger.info("Deleting all Chansons...");
 
@@ -155,7 +157,6 @@ public class ChansonDao {
 
 		logger.info("Chansons deleted : " + result.size());
 
-		return result;
 	}
 	
 }
