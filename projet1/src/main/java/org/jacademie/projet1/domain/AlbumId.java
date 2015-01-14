@@ -7,7 +7,7 @@ import javax.persistence.Embeddable;
 
 /**
  * Classe qui represente la clé en BDD d'un Album.
- * Elle implemente "Serializable", hash et equals afin d'etre utilisée comme une clé prrimaire composée
+ * Elle implemente "Serializable", hash et equals afin d'etre utilisée comme une clé primaire composée
  * @author jacademie-team
  *
  * ANNOTATION - MAPPING

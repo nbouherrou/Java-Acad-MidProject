@@ -7,11 +7,11 @@ import javax.persistence.Embeddable;
 
 /**
  * Classe qui represente la clé en BDD d'une Chanson.
- * Elle implemente "Serializable", hash et equals afin d'etre utilisée comme une clé prrimaire composée
+ * Elle implemente "Serializable", hash et equals afin d'être utilisées comme une clé primaire composée
  * @author jacademie-team
  *
  * ANNOTATION - MAPPING
- * On declare la classe pour l'injecter dans comme composite-id
+ * On déclare la classe pour l'injecter dans comme composite-id
  */
 @Embeddable
 public class ChansonId implements Serializable {

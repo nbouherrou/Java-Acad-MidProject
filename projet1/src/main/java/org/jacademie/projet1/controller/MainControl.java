@@ -98,7 +98,7 @@ public class MainControl {
 					
 					ChansonId 	chansonID 	= new ChansonId(numeroChanson, albumID);
 					
-					// recherche de l'artiste en BDD
+					// Recherche de l'artiste en BDD
 
 					Artiste artiste = new Artiste();
 
@@ -136,7 +136,7 @@ public class MainControl {
 								
 								Chanson current_chanson = new Chanson(chansonID, titreChanson, dureeChanson, album );
 								
-								// Si les nom/durée de la chanson ont changé, on fait un UPDATE
+								// Si les valeurs nom/durée de la chanson ont changé, on fait un UPDATE
 								if(!chanson.equals(current_chanson)){
 									
 									logger.info("Song  details (Titre,Duree) Updated ! ");
@@ -151,7 +151,7 @@ public class MainControl {
 								
 							}else{
 								
-								// Dans le cas ou la chanson n'existe pas en BDD
+								// Dans le cas où la chanson n'existe pas en BDD
 								
 								Chanson chanson1 = new Chanson();
 						
@@ -173,7 +173,7 @@ public class MainControl {
 							
 						}else{
 							
-							// Dans le cas ou l'abum n'existe pas en BDD
+							// Dans le cas où l'abum n'existe pas en BDD
 
 							Chanson chanson = new Chanson();
 
@@ -201,7 +201,7 @@ public class MainControl {
 
 					} else {
 						
-						// Dans le cas ou la ligne (Artiste/Album/Chanson) n'exsite pas en BDD
+						// Dans le cas où la ligne (Artiste/Album/Chanson) n'exsite pas en BDD
 
 						Chanson chanson = new Chanson();
 

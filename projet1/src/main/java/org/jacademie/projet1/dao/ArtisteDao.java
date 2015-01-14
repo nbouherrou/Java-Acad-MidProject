@@ -46,7 +46,7 @@ public class ArtisteDao {
 	}
 	
 	/**
-	 * Recupere un objet Artiste de la BDD a partir de son identifiant
+	 * Recupère un objet Artiste de la BDD à partir de son identifiant
 	 * @param id		: identifiant de l'artiste
 	 * @return
 	 * @throws Exception
@@ -77,7 +77,7 @@ public class ArtisteDao {
 	
 	
 	/**
-	 * Met a jour les données (enfants aussi, Albums, Chansons) d'un objet Artiste en les persistant en BDD.
+	 * Met à jour les données (enfants aussi, Albums, Chansons) d'un objet Artiste en les persistant en BDD.
 	 * @param artiste		: objet Artiste	
 	 * @throws Exception
 	 */

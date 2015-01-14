@@ -18,7 +18,7 @@ import javax.persistence.Table;
  * @author jacademie-team
  *
  * ANNOTATION - MAPPING
- * On persiste la class dans une table qu'on nomme :  ARTISTE
+ * On persiste la classe dans une table qu'on nomme :  ARTISTE
  */
 @Entity
 @Table(name = "ARTISTE")

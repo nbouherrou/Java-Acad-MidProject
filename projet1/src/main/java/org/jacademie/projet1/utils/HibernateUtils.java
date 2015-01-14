@@ -15,7 +15,7 @@ import org.hibernate.service.ServiceRegistry;
 public class HibernateUtils {
 	
 	/**
-	 * Factory qui genere les sessions de connexion a la BDD
+	 * Factory qui génère les sessions de connexion a la BDD
 	 */
 	private static SessionFactory sessionFactory = null;
 	
@@ -36,7 +36,7 @@ public class HibernateUtils {
 	}
 	
 	/**
-	 * Genere une session de connexion à la BDD
+	 * Génère une session de connexion à la BDD
 	 * @return	Session
 	 * @throws 	Exception
 	 */

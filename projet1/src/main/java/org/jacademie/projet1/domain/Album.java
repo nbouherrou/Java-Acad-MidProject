@@ -59,7 +59,7 @@ public class Album implements java.io.Serializable {
 
 	/**
 	 * ANNOTATION - MAPPING
-	 * Ce champs ne sera pas persister en BDD lors du mapping/sauvegarde de l'objet.
+	 * Ce champs ne sera pas persisté en BDD lors du mapping/sauvegarde de l'objet.
 	 */
 	@Transient
 	private Artiste artiste;
@@ -67,7 +67,7 @@ public class Album implements java.io.Serializable {
 	
 
 	/**
-	 * Constructeur avec parametres de la classe Album.
+	 * Constructeur avec paramètres de la classe Album.
 	 * 
 	 * @param AlbumId albumID 		: identifiant d'un album (obbjet AlbumId , modelisation d'une clée primaire composées)
 	 * @param String nom			: nom de l'album
@@ -91,7 +91,7 @@ public class Album implements java.io.Serializable {
 	}
 	
 	/**
-	 * Constructeur sans parametres de la classe Album
+	 * Constructeur sans paramètres de la classe Album
 	 */
 	public Album() {
 

@@ -13,17 +13,17 @@ public class Constants {
 	public static final String DEST_PATH 				= System.getProperty("user.dir")+"/src/main/resources/processed/";
 	
 	/**
-	 * Chemin le dossier racine de l'application
+	 * Chemin vers le dossier racine de l'application
 	 */
 	public static final String RESSOURCE_DIR_PATH		= System.getProperty("user.dir");
 
 	/**
-	 * Extension accepté dans l'application
+	 * Extension acceptée dans l'application
 	 */
 	public static final String EXTENSION 				= "music";
 
 	/**
-	 * Mapping de l'entete des fichiers de l'application
+	 * Mapping de l'entête des fichiers de l'application
 	 */
 	public static final String[] FILE_HEADER_MAPPING 	= { "CodeArtiste", "NomArtiste",
 															"CodeAlbum", "NomAlbum", 
