@@ -60,15 +60,13 @@ public class Main {
 
 				goodPath.forEach(path -> {
 					
-					// Traitement du fichier puis déplacement dans le dossier "precessed"
+					// Traitement du fichier puis déplacement dans le dossier "processed"
 
 					ctrl.mainControl(path);
-					
-					/*
+
 					
 					fileUtils.moveFile(path);	
 					
-					*/
 					
 				});
 
