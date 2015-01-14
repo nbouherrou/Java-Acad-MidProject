@@ -78,22 +78,50 @@ public class MainControl {
 					artiste = artisteDao.findArtisteById(codeArtiste);
 
 					if (artiste != null) {
+						
+						if(!artiste.getNom().equals(nomArtiste)){
+							
+							artisteDao.updateArtiste(artiste);
+							
+							logger.info("Artiste  details (Nom) Updated ! ");
+						}
 
 						Album album = albumDao.findAlbumByIdAndIdArtiste(codeAlbum,codeArtiste);
 						
 						if(album != null ){
 							
-							Chanson chanson = chansonDao.findChansonByIdAndIdAlbum(numeroChanson, codeAlbum);
+							if(!album.getNom().equals(nomAlbum)){
+								
+								albumDao.updateAlbum(album);
+								
+								logger.info("Album details (Nom) Updated ! ");
+							}
+							
+							AlbumId albumID = new AlbumId(codeAlbum,codeArtiste);
+							
+							Chanson chanson = chansonDao.findChansonByIdAndIdAlbum(numeroChanson, albumID);
 							
 							if(chanson != null){
 								
-								logger.info("Nothing has change, song already exists ! ");
+								ChansonId chansonID = new ChansonId(numeroChanson, albumID);
+								
+								Chanson current_chanson = new Chanson(chansonID, titreChanson, dureeChanson, album );
+								
+								if(!chanson.equals(current_chanson)){
+									
+									logger.info("Song  details (Titre,Duree) Updated ! ");
+									
+								}else{
+									
+									logger.info("Nothing has change, song already exists ! ");
+								
+								}
 								
 							}else{
 								
 								Chanson chanson1 = new Chanson();
 								
-								ChansonId chansonID = new ChansonId(numeroChanson, codeAlbum);
+								ChansonId chansonID = new ChansonId(numeroChanson, albumID);
 
 								chanson1.setChansonID(chansonID);
 
@@ -113,11 +141,28 @@ public class MainControl {
 							
 						}else{
 							
+							AlbumId albumID = new AlbumId(codeAlbum,codeArtiste);
+							
+
+							Chanson chanson = new Chanson();
+
+							ChansonId chansonID = new ChansonId(numeroChanson, albumID);
+
+							chanson.setChansonID(chansonID);
+							
+							chanson.setTitre(titreChanson);
+
+							chanson.setDureeChanson(dureeChanson);
+							
+							
 							Album album1 = new Album();
 							
-							album1.setAlbumID(new AlbumId(codeAlbum,codeArtiste));;
+							album1.setAlbumID(albumID);;
 
 							album1.setNom(nomAlbum);
+							
+							
+							album1.addChanson(chanson);
 
 							artiste.addAlbum(album1);
 
@@ -127,18 +172,23 @@ public class MainControl {
 
 					} else {
 						
+						AlbumId albumID = new AlbumId(codeAlbum,codeArtiste);
+						
+						
 						Chanson chanson = new Chanson();
 
-						ChansonId chansonID = new ChansonId(numeroChanson, codeAlbum);
+						ChansonId chansonID = new ChansonId(numeroChanson, albumID);
 
 						chanson.setChansonID(chansonID);
+						
+						chanson.setTitre(titreChanson);
 
 						chanson.setDureeChanson(dureeChanson);
 
 		
 						Album album = new Album();
 						
-						album.setAlbumID(new AlbumId(codeAlbum,codeArtiste));;
+						album.setAlbumID(albumID);;
 
 						album.setNom(nomAlbum);
 						

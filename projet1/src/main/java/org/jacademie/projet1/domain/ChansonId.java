@@ -6,31 +6,39 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
-public class ChansonId implements Serializable{
-	
+public class ChansonId implements Serializable {
+
 	@Column(name = "CHANSON_ID_PK_CHANSON")
 	private Integer idChanson;
-	
-	@Column(name = "CHANSON_ID_PK_ALBUM")
-	private Integer idAlbum;
 
+	@Column(name = "CHANSON_ID_PK_ALBUM_ID")
+	private AlbumId albumID;
+
+	public ChansonId(Integer idChanson, AlbumId albumID) {
+		super();
+		this.idChanson = idChanson;
+		this.albumID = albumID;
+	}
 
 	public ChansonId() {
 		super();
 	}
 
-	public ChansonId(Integer idChanson, Integer idAlbum) {
-		super();
-		this.idAlbum 	= idAlbum;
-		this.idChanson 	= idChanson;
+	public void setAlbumID(AlbumId albumID) {
+		this.albumID = albumID;
 	}
 
+	@Override
+	public String toString() {
+		return "ChansonId [idChanson=" + idChanson + ", albumID=" + albumID.toString()
+				+ "]";
+	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((idAlbum == null) ? 0 : idAlbum.hashCode());
+		result = prime * result + ((albumID == null) ? 0 : albumID.hashCode());
 		result = prime * result
 				+ ((idChanson == null) ? 0 : idChanson.hashCode());
 		return result;
@@ -38,31 +46,30 @@ public class ChansonId implements Serializable{
 
 	@Override
 	public boolean equals(Object obj) {
-		
-		
+
 		if (this == obj)
 			return true;
 		if (obj == null)
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		
-		
+
 		ChansonId other = (ChansonId) obj;
-		if (idAlbum == null) {
-			if (other.idAlbum != null)
+
+		if (albumID == null) {
+			if (other.albumID != null)
 				return false;
-			
-		} else if (!idAlbum.equals(other.idAlbum))
+		} else if (!albumID.equals(other.albumID))
 			return false;
-		
 		if (idChanson == null) {
 			if (other.idChanson != null)
 				return false;
-		} 
-		
-		return (this.idAlbum.longValue() == other.getIdAlbum().longValue()) && 
-				(this.idChanson.longValue() == other.getIdChanson().longValue());
+		} else if (!idChanson.equals(other.idChanson))
+			return false;
+
+		return (this.albumID.equals(other))
+				&& (this.idChanson.longValue() == other.getIdChanson()
+						.longValue());
 	}
 
 	public Integer getIdChanson() {
@@ -73,21 +80,8 @@ public class ChansonId implements Serializable{
 		this.idChanson = idChanson;
 	}
 
-	public Integer getIdAlbum() {
-		return idAlbum;
+	public AlbumId getAlbumID() {
+		return albumID;
 	}
-
-	public void setIdAlbum(Integer idAlbum) {
-		this.idAlbum = idAlbum;
-	}
-
-	@Override
-	public String toString() {
-		return "ChansonId [idChanson=" + idChanson + ", idAlbum=" + idAlbum
-				+ "]";
-	}
-	
-	
-	
 
 }

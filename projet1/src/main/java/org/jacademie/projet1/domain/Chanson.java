@@ -18,6 +18,16 @@ public class Chanson implements java.io.Serializable {
 	@Column(name = "TITRE") 
 	private String titre;
 	
+	public Chanson(ChansonId chansonID, String titre, Integer dureeChanson,
+			Album album) {
+		super();
+		this.chansonID = chansonID;
+		this.titre = titre;
+		this.dureeChanson = dureeChanson;
+		this.album = album;
+	}
+
+
 	@Column(name = "DUREE") 
 	private Integer dureeChanson;
 	
@@ -80,6 +90,40 @@ public class Chanson implements java.io.Serializable {
 
 	public void setChansonID(ChansonId chansonID) {
 		this.chansonID = chansonID;
+	}
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result
+				+ ((dureeChanson == null) ? 0 : dureeChanson.hashCode());
+		result = prime * result + ((titre == null) ? 0 : titre.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Chanson other = (Chanson) obj;
+		if (dureeChanson == null) {
+			if (other.dureeChanson != null)
+				return false;
+		} else if (!dureeChanson.equals(other.dureeChanson))
+			return false;
+		if (titre == null) {
+			if (other.titre != null)
+				return false;
+		} else if (!titre.equals(other.titre))
+			return false;
+		return (this.getTitre().equals(other) && this.getDureeChanson() == other.getDureeChanson());
 	}
 
 	
