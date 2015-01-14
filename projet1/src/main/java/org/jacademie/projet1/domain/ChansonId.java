@@ -5,23 +5,51 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+/**
+ * Classe qui represente la clé en BDD d'une Chanson.
+ * Elle implemente "Serializable", hash et equals afin d'etre utilisée comme une clé prrimaire composée
+ * @author jacademie-team
+ *
+ * ANNOTATION - MAPPING
+ * On declare la classe pour l'injecter dans comme composite-id
+ */
 @Embeddable
 public class ChansonId implements Serializable {
 
+	/**
+	 * ANNOTATION - MAPPING
+	 * Colonne "CHANSON_ID_PK_CHANSON"
+	 */
 	@Column(name = "CHANSON_ID_PK_CHANSON")
 	private Integer idChanson;
 
+	/**
+	 * ANNOTATION - MAPPING
+	 * Colonne "CHANSON_ID_PK_ALBUM_ID"
+	 * 
+	 * @see AlbumId
+	 */
 	@Column(name = "CHANSON_ID_PK_ALBUM_ID")
 	private AlbumId albumID;
 
+	/**
+	 * Constructeur avec parametres de la classe AlbumId.
+	 * @param Integer idChanson		: numeroChanson
+	 * @param AlbumId albumID		: Objet AlbumId composé du codeAlbum et du codeArtiste
+	 */
 	public ChansonId(Integer idChanson, AlbumId albumID) {
 		super();
 		this.idChanson = idChanson;
 		this.albumID = albumID;
 	}
 
+	/**
+	 * Constructeur sans parametres de la classe Album
+	 */
 	public ChansonId() {
+		
 		super();
+		
 	}
 
 	public void setAlbumID(AlbumId albumID) {
@@ -32,6 +60,18 @@ public class ChansonId implements Serializable {
 	public String toString() {
 		return "ChansonId [idChanson=" + idChanson + ", albumID=" + albumID.toString()
 				+ "]";
+	}
+	
+	public Integer getIdChanson() {
+		return idChanson;
+	}
+
+	public void setIdChanson(Integer idChanson) {
+		this.idChanson = idChanson;
+	}
+
+	public AlbumId getAlbumID() {
+		return albumID;
 	}
 
 	@Override
@@ -70,18 +110,6 @@ public class ChansonId implements Serializable {
 		return (this.albumID.equals(other))
 				&& (this.idChanson.longValue() == other.getIdChanson()
 						.longValue());
-	}
-
-	public Integer getIdChanson() {
-		return idChanson;
-	}
-
-	public void setIdChanson(Integer idChanson) {
-		this.idChanson = idChanson;
-	}
-
-	public AlbumId getAlbumID() {
-		return albumID;
 	}
 
 }

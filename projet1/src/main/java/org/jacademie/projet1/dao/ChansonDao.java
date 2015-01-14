@@ -11,10 +11,24 @@ import org.jacademie.projet1.domain.Chanson;
 import org.jacademie.projet1.domain.ChansonId;
 import org.jacademie.projet1.utils.HibernateUtils;
 
+
+/**
+ * Classe qui gère l'accès en BDD aux abjets Chanson.
+ * @author jacademie-team
+ *
+ */
 public class ChansonDao {
 
+	/**
+	 * Champs logger pour afficher les messages 
+	 */
 	private static Logger logger = LogManager.getLogger(ChansonDao.class);
 
+	/**
+	 * Persiste un Artiste en BDD.
+	 * @param chanson		: objet Artiste
+	 * @throws Exception
+	 */
 	public void createChanson(Chanson chanson) throws Exception {
 
 		logger.info("Creating chanson : " + chanson + "...");
@@ -31,36 +45,19 @@ public class ChansonDao {
 
 		logger.info("Chanson created. \n");
 	}
-
-	public Chanson findChansonById(int id) throws Exception {
-
-		logger.info("Finding Chanson with id : " + id + "...");
-
-		Session session = HibernateUtils.getSession();
-
-		session.beginTransaction();
-
-		Chanson result = (Chanson) session.get(Chanson.class, id);
-
-		session.getTransaction().commit();
-
-		HibernateUtils.closeSession(session);
-
-		if (result != null) {
-
-			logger.info("Chanson found : " + result);
-		} else {
-			logger.info("Chanson not found");
-		}
-
-		return result;
-	}
 	
-	public Chanson findChansonByIdAndIdAlbum(int id, AlbumId albumID) throws Exception {
-		
-		logger.info("findChansonByIdAndIdAlbum chanson_id : " + id + ", album_id : "+ albumID.toString());
-		
-		ChansonId chansonID = new ChansonId(id, albumID);
+	/**
+	 * Recupere un objet Artiste de la BDD a partir de son identifiant (objet chansonID).
+	 * 
+	 * @param chansonID		: identifiant d'une chanson
+	 * @return
+	 * @throws Exception
+	 * 
+	 * @see ChansonId
+	 */
+	public Chanson findChansonById(ChansonId chansonID) throws Exception {
+
+		logger.info("findChansonById chansonID : "+ chansonID.toString());
 
 		Session session = HibernateUtils.getSession();
 
@@ -84,7 +81,12 @@ public class ChansonDao {
 		return chanson;
 	}
 	
-
+	
+	/**
+	 * Met a jour les données d'un objet Chanson en les persistant en BDD.
+	 * @param chanson		: objet Chanson
+	 * @throws Exception
+	 */
 	public void updateChanson(Chanson chanson) throws Exception {
 
 		logger.info("Updating Chanson : " + chanson + "...");
@@ -102,7 +104,11 @@ public class ChansonDao {
 		logger.info("Chanson updated. \n");
 	}
 	
-	
+	/**
+	 * Recupere la liste de toutes les chansons en BDD.
+	 * @return
+	 * @throws Exception
+	 */
 	public List<Chanson> retrieveAllChansons() throws Exception {
 
 		logger.info("Retrieving all Chansons...");
@@ -124,7 +130,11 @@ public class ChansonDao {
 		return result;
 	}
 	
-
+	/**
+	 * Efface toutes les chansons de la BDD.
+	 * @return
+	 * @throws Exception
+	 */
 	public List<Chanson> deleteAllAlbums() throws Exception {
 
 		logger.info("Deleting all Chansons...");

@@ -10,10 +10,23 @@ import org.hibernate.criterion.Restrictions;
 import org.jacademie.projet1.domain.Artiste;
 import org.jacademie.projet1.utils.HibernateUtils;
 
+/**
+ * Classe qui gère l'accès en BDD aux abjets Artiste.
+ * @author jacademie-team
+ *
+ */
 public class ArtisteDao {
 
+	/**
+	 * Champs logger pour afficher les messages 
+	 */
 	private static Logger logger = LogManager.getLogger(ArtisteDao.class);
 
+	/**
+	 * Persiste un Artiste en BDD.
+	 * @param artiste		: objet Artiste
+	 * @throws Exception
+	 */
 	public void createArtiste(Artiste artiste) throws Exception {
 
 		logger.info("Creating artiste : " + artiste + "...");
@@ -31,7 +44,13 @@ public class ArtisteDao {
 		HibernateUtils.closeSession(session);
 
 	}
-
+	
+	/**
+	 * Recupere un objet Artiste de la BDD a partir de son identifiant
+	 * @param id		: identifiant de l'artiste
+	 * @return
+	 * @throws Exception
+	 */
 	public Artiste findArtisteById(int id) throws Exception {
 
 		logger.info("Finding Artiste with id : " + id + "...");
@@ -57,47 +76,11 @@ public class ArtisteDao {
 	}
 	
 	
-	
-	public Artiste findArtisteByIdAndIdAlbum(int id, int idAlbum) throws Exception {
-
-		logger.info("Finding Artiste with id : " + id + "...");
-		
-		Artiste artiste = new Artiste();
-
-		Session session = HibernateUtils.getSession();
-
-		session.beginTransaction();
-
-		Criteria criteria = session.createCriteria(Artiste.class);
-		
-		criteria.createCriteria("albums", "s");
-		
-		criteria.add(Restrictions.eq("id", id));
-		
-		criteria.add(Restrictions.eq("s.id", idAlbum));
-		
-		List<Artiste> result = criteria.list();
-
-		session.getTransaction().commit();
-
-		HibernateUtils.closeSession(session);
-
-		if (!result.isEmpty()) {
-
-			logger.info("Artiste found : " + result);
-			
-			artiste = result.get(0);
-		} else {
-			logger.info("Artiste not found");
-			
-			artiste = null;
-		}
-
-		return artiste;
-	}
-	
-	
-
+	/**
+	 * Met a jour les données (enfants aussi, Albums, Chansons) d'un objet Artiste en les persistant en BDD.
+	 * @param artiste		: objet Artiste	
+	 * @throws Exception
+	 */
 	public void updateArtiste(Artiste artiste) throws Exception {
 
 		logger.info("Updating artiste : " + artiste + "...");
@@ -115,6 +98,11 @@ public class ArtisteDao {
 		logger.info("Artiste updated. \n");
 	}
 
+	/**
+	 * Recupere la liste de tous les Artiste en BDD.
+	 * @return
+	 * @throws Exception
+	 */
 	public Artiste retrieveAllArtistes() throws Exception {
 
 		logger.info("Retrieving all Artistes...");
@@ -136,7 +124,11 @@ public class ArtisteDao {
 		return result.get(0);
 	}
 	
-
+	/**
+	 * Efface tous les artiste en BDD.
+	 * @return
+	 * @throws Exception
+	 */
 	public List<Artiste> deleteAllArtistes() throws Exception {
 
 		logger.info("Deleting all Artistes...");
@@ -158,25 +150,6 @@ public class ArtisteDao {
 		logger.info("Artistes deleted : " + result.size() + "\n");
 
 		return result;
-	}
-
-	
-	public static void main(String[] args) {
-		
-		try {
-			
-			HibernateUtils.setUp();
-			
-			ArtisteDao artisteDao = new ArtisteDao();
-			
-			artisteDao.findArtisteByIdAndIdAlbum(1, 2);
-			
-			HibernateUtils.tearDown();
-			
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 
 }

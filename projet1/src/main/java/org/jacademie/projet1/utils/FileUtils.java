@@ -1,6 +1,7 @@
 package org.jacademie.projet1.utils;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.Charset;
@@ -17,12 +18,29 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jacademie.projet1.constants.Constants;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 
+/**
+ * Classe qui gère les fonctions utiles à la manipulation des fichiers
+ * @author jacademie-team
+ *
+ */
 public class FileUtils {
 
+	/**
+	 * Champs logger pour afficher les messages 
+	 */
 	private static Logger logger = LogManager.getLogger(FileUtils.class);
 
+	/**
+	 * Récupère dans un dossier les chemins des fichiers qui ont une extension donnée.
+	 * @param 	path			: chemin vers un répertoire
+	 * @param 	extension		: extension des fichiers cibles
+	 * @return	ArrayList<Path>	: liste de chemins vers les fichiers avec la bonne extension
+	 */
 	public ArrayList<Path> getFilesInDirectoryWithExtension(String path,
 			String extension) {
 
@@ -73,8 +91,10 @@ public class FileUtils {
 
 
 	/**
-	 * @param pathList
-	 * @return
+	 * Filtre les fichiers selon format (CVS).
+	 * Les chemins retenus sont relatifs aux fichiers sans erreurs (aucune ligne erroné)
+	 * @param 		pathList		: liste de chemins 
+	 * @return 		ArrayList<Path> : liste de chemins des fichiers valides
 	 */
 	public ArrayList<Path> filterGoodFiles(ArrayList<Path> pathList) {
 
@@ -84,15 +104,9 @@ public class FileUtils {
 
 		CSVFormat csvFileFormat = CSVFormat.DEFAULT.withHeader(Constants.FILE_HEADER_MAPPING);
 		
-		
-
 		pathList.stream().forEach( path -> {
 
 			logger.info("Path " + path);
-
-			Integer total_lignes = 0;
-
-			Integer wrong_lines = 0;
 
 			try {
 
@@ -105,25 +119,16 @@ public class FileUtils {
 				List<CSVRecord> csvRecords = csvFileParser
 						.getRecords();
 
-				total_lignes = csvRecords.size();
-
 				for (CSVRecord record : csvRecords) {
 					
 					if (!record.isConsistent()) {
 						
-						wrong_lines++;
+						pathList.remove(path);
 
 					}
 
 				}
 				
-				if (total_lignes == wrong_lines) {
-					
-					pathList.remove(path);
-
-				}
-				
-
 			} catch (Exception e1) {
 
 				e1.printStackTrace();
@@ -137,6 +142,11 @@ public class FileUtils {
 		
 	}
 
+	/**
+	 * Deplace un fichier vers le répertoire "src/ressources/precessed"
+	 * @param 		path	: chemin du fichier
+	 * @return		Boolean
+	 */
 	public Boolean moveFile(Path path) {
 
 		logger.info("Begin moveFile ......");
@@ -159,6 +169,34 @@ public class FileUtils {
 		logger.info("End moveFile function ! \n");
 
 		return success;
+	}
+	
+	/**
+	 * Lit le fichier de configuration (src/main/resources/Configuration.json) 
+	 * et le retourne comme objet JSON.
+	 * 
+	 * @return	JSONObject
+	 */
+	public static JSONObject loadConfigurationFile(){
+		
+		Path path 		= Paths.get(Constants.RESSOURCE_DIR_PATH, "Configuration.json");
+		
+		logger.info(path.toString());
+		
+	    JSONParser parser = new JSONParser();
+    
+	    Object obj = null;
+	    
+		try {
+			
+			obj = parser.parse(new FileReader(path.toString()));
+			
+		} catch (IOException | ParseException e) {
+			
+			e.printStackTrace();
+		}
+
+		return (JSONObject)obj;
 	}
 
 }

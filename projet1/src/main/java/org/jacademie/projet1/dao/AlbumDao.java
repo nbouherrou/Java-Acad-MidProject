@@ -10,10 +10,24 @@ import org.jacademie.projet1.domain.Album;
 import org.jacademie.projet1.domain.AlbumId;
 import org.jacademie.projet1.utils.HibernateUtils;
 
+/**
+ * Classe qui gère l'accès en BDD aux abjets ALBUM.
+ * @author jacademie-team
+ *
+ */
 public class AlbumDao {
 
+	/**
+	 * Champs logger pour afficher les messages 
+	 */
 	private static Logger logger = LogManager.getLogger(AlbumDao.class);
 
+	/**
+	 * Persiste un Album en BDD.
+	 * 
+	 * @param album			: Objet Album
+	 * @throws Exception
+	 */
 	public void createAlbum(Album album) throws Exception {
 
 		logger.info("Creating album : " + album + "...");
@@ -31,41 +45,22 @@ public class AlbumDao {
 		logger.info("Album created. \n");
 	}
 
-	public Album findAlbumById(int id) throws Exception {
+	/**
+	 * Recupere un objet Album de la BDD a partir de son identifiant (objet AlbumId)
+	 * 
+	 * @param albumID		: identifiant d'un album
+	 * @return				: album
+	 * @throws Exception
+	 * 
+	 * @see AlbumId
+	 */
+	public Album findAlbumById(AlbumId albumID) throws Exception {
 
-		logger.info("Finding album with id : " + id + "...");
-
-		Session session = HibernateUtils.getSession();
-
-		session.beginTransaction();
-
-		Album result = (Album) session.get(Album.class, id);
-
-		session.getTransaction().commit();
-
-		HibernateUtils.closeSession(session);
-
-		if (result != null) {
-
-			logger.info("Album found : " + result);
-		} else {
-			logger.info("Album not found");
-		}
-
-		return result;
-	}
-
-	public Album findAlbumByIdAndIdArtiste(int id, int idArtiste)
-			throws Exception {
-
-		logger.info("findAlbumByIdAndIdArtiste album_id : " + id
-				+ ", artiste_id : " + idArtiste);
+		logger.info("findAlbumById albumID : " + albumID.toString());
 
 		Session session = HibernateUtils.getSession();
 
 		session.beginTransaction();
-		
-		AlbumId albumID  = new AlbumId(id,idArtiste);
 		
 		Album album = (Album) session.get(Album.class, albumID);
 		
@@ -85,6 +80,11 @@ public class AlbumDao {
 		return album;
 	}
 
+	/**
+	 * Met a jour les données (enfants aussi, Chansons) d'un objet Album en les persistant en BDD.
+	 * @param album			: objet album
+	 * @throws Exception
+	 */
 	public void updateAlbum(Album album) throws Exception {
 
 		logger.info("Updating Album : " + album + "...");
@@ -102,6 +102,11 @@ public class AlbumDao {
 		logger.info("Album updated. \n");
 	}
 
+	/**
+	 * Recupere la liste de tous les albums en BDD.
+	 * @return
+	 * @throws Exception
+	 */
 	public List<Album> retrieveAllAlbums() throws Exception {
 
 		logger.info("Retrieving all Albums...");
@@ -123,6 +128,11 @@ public class AlbumDao {
 		return result;
 	}
 
+	/**
+	 * Efface tous les albums en BDD.
+	 * @return
+	 * @throws Exception
+	 */
 	public List<Album> deleteAllAlbums() throws Exception {
 
 		logger.info("Deleting all Artistes...");
@@ -146,22 +156,5 @@ public class AlbumDao {
 		return result;
 	}
 
-	public static void main(String[] args) {
-
-		try {
-
-			HibernateUtils.setUp();
-
-			AlbumDao albumDao = new AlbumDao();
-
-			albumDao.findAlbumByIdAndIdArtiste(1, 1);
-
-			HibernateUtils.tearDown();
-
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 
 }

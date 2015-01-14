@@ -15,23 +15,84 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+
+/**
+ * Classe qui gère un album ainsi que ses musiques.
+ * @author jacademie-team
+ *
+ * ANNOTATION - MAPPING
+ * On persiste la class dans une table qu'on nomme : ALBUM
+ */
 @Entity
 @Table(name = "ALBUM")
 public class Album implements java.io.Serializable {
 
+	/**
+	 * ANNOTATION - MAPPING
+	 * Clé primaire de la table avec un nom de colonne "ALBUM_ID"
+	 * Remarque : 
+	 * cet objet (contenant 2 champs) represente une clé primaire composée pour cette table.
+	 * 
+	 * @see AlbumId
+	 */
 	@Id
 	@Column(name = "ALBUM_ID")
 	private AlbumId albumID;
 
+	
+	/**
+	 * ANNOTATION - MAPPING
+	 * Colonne "NOM" de la table (contiendra le nom de l'album) 
+	 */
 	@Column(name = "NOM")
 	private String nom;
 
+	/**
+	 * ANNOTATION - MAPPING
+	 * Lien (1 -> N)  entre un album et sa liste de musique.
+	 * Cette relation injecte les clés étrangères (FOREIGN KEYS) adéquates.
+	 * 
+	 * @see Chanson
+	 */
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
 	private Set<Chanson> chansons;
 
-	@ManyToOne
+	/**
+	 * ANNOTATION - MAPPING
+	 * Ce champs ne sera pas persister en BDD lors du mapping/sauvegarde de l'objet.
+	 */
+	@Transient
 	private Artiste artiste;
+	
+	
 
+	/**
+	 * Constructeur avec parametres de la classe Album.
+	 * 
+	 * @param AlbumId albumID 		: identifiant d'un album (obbjet AlbumId , modelisation d'une clée primaire composées)
+	 * @param String nom			: nom de l'album
+	 * @param Set<Chanson> chansons	: liste des chansons présentes dans l'album			: 
+	 * @param artiste				: l'artiste qui a produit cet album (objet Artiste)
+	 * 
+	 * @see  AlbumId, Artiste
+	 */
+	public Album(AlbumId albumID, String nom, Set<Chanson> chansons,
+			Artiste artiste) {
+		
+		super();
+		
+		this.albumID = albumID;
+		
+		this.nom = nom;
+		
+		this.chansons = chansons;
+		
+		this.artiste = artiste;
+	}
+	
+	/**
+	 * Constructeur sans parametres de la classe Album
+	 */
 	public Album() {
 
 		super();
@@ -40,19 +101,10 @@ public class Album implements java.io.Serializable {
 
 	}
 
-	@Override
-	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Album [idAlbum=");
-		builder.append(albumID.toString());
-		builder.append(", nom=");
-		builder.append(nom);
-		builder.append(", chansons=");
-		builder.append(chansons);
-		builder.append("]");
-		return builder.toString();
-	}
-
+	/**
+	 * Ajout d'une chanson dans à cet album.
+	 * @param Chanson chanson : chanson
+	 */
 	public void addChanson(Chanson chanson) {
 
 		chanson.setAlbum(this);
@@ -60,6 +112,7 @@ public class Album implements java.io.Serializable {
 		this.chansons.add(chanson);
 	}
 
+	
 	public String getNom() {
 		return nom;
 	}
@@ -75,6 +128,14 @@ public class Album implements java.io.Serializable {
 	public void setChansons(Set<Chanson> chansons) {
 		this.chansons = chansons;
 	}
+	
+	public AlbumId getAlbumID() {
+		return albumID;
+	}
+
+	public void setAlbumID(AlbumId albumID) {
+		this.albumID = albumID;
+	}
 
 	@Transient
 	public Artiste getArtiste() {
@@ -86,12 +147,28 @@ public class Album implements java.io.Serializable {
 		this.artiste = artiste;
 	}
 
-	public AlbumId getAlbumID() {
-		return albumID;
+	
+	@Override
+	public String toString() {
+		
+		StringBuilder builder = new StringBuilder();
+		
+		builder.append("Album [idAlbum=");
+		
+		builder.append(albumID.toString());
+		
+		builder.append(", nom=");
+		
+		builder.append(nom);
+		
+		builder.append(", chansons=");
+		
+		builder.append(chansons);
+		
+		builder.append("]");
+		
+		return builder.toString();
 	}
 
-	public void setAlbumID(AlbumId albumID) {
-		this.albumID = albumID;
-	}
 
 }

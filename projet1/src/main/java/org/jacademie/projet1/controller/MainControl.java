@@ -21,6 +21,9 @@ import org.jacademie.projet1.utils.HibernateUtils;
 
 public class MainControl {
 
+	/**
+	 * Champs logger pour afficher les messages 
+	 */
 	private static Logger logger = LogManager.getLogger(MainControl.class);
 
 	public void mainControl(Path path) {
@@ -42,7 +45,7 @@ public class MainControl {
 
 			for (CSVRecord record : csvFileParser.getRecords()) {
 
-				logger.info("LineSize : " + record.size()
+				logger.info(" ,LineSize : " + record.size()
 						+ " - isConsistent : " + record.isConsistent());
 
 				logger.info(record);
@@ -72,6 +75,10 @@ public class MainControl {
 
 					Integer dureeChanson = Integer.parseInt(record
 							.get(Constants.DUREE_CHANSON));
+					
+					AlbumId 	albumID 	= new AlbumId(codeAlbum,codeArtiste);
+					
+					ChansonId 	chansonID 	= new ChansonId(numeroChanson, albumID);
 
 					Artiste artiste = new Artiste();
 
@@ -86,7 +93,7 @@ public class MainControl {
 							logger.info("Artiste  details (Nom) Updated ! ");
 						}
 
-						Album album = albumDao.findAlbumByIdAndIdArtiste(codeAlbum,codeArtiste);
+						Album album = albumDao.findAlbumById(albumID);
 						
 						if(album != null ){
 							
@@ -97,13 +104,10 @@ public class MainControl {
 								logger.info("Album details (Nom) Updated ! ");
 							}
 							
-							AlbumId albumID = new AlbumId(codeAlbum,codeArtiste);
 							
-							Chanson chanson = chansonDao.findChansonByIdAndIdAlbum(numeroChanson, albumID);
+							Chanson chanson = chansonDao.findChansonById(chansonID);
 							
 							if(chanson != null){
-								
-								ChansonId chansonID = new ChansonId(numeroChanson, albumID);
 								
 								Chanson current_chanson = new Chanson(chansonID, titreChanson, dureeChanson, album );
 								
@@ -120,9 +124,7 @@ public class MainControl {
 							}else{
 								
 								Chanson chanson1 = new Chanson();
-								
-								ChansonId chansonID = new ChansonId(numeroChanson, albumID);
-
+						
 								chanson1.setChansonID(chansonID);
 
 								chanson1.setTitre(titreChanson);
@@ -140,13 +142,8 @@ public class MainControl {
 							}
 							
 						}else{
-							
-							AlbumId albumID = new AlbumId(codeAlbum,codeArtiste);
-							
 
 							Chanson chanson = new Chanson();
-
-							ChansonId chansonID = new ChansonId(numeroChanson, albumID);
 
 							chanson.setChansonID(chansonID);
 							
@@ -171,13 +168,8 @@ public class MainControl {
 						}
 
 					} else {
-						
-						AlbumId albumID = new AlbumId(codeAlbum,codeArtiste);
-						
-						
-						Chanson chanson = new Chanson();
 
-						ChansonId chansonID = new ChansonId(numeroChanson, albumID);
+						Chanson chanson = new Chanson();
 
 						chanson.setChansonID(chansonID);
 						

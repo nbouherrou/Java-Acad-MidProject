@@ -2,12 +2,29 @@ package org.jacademie.projet1.constants;
 
 public class Constants {
 
+	/**
+	 * Chemin vers le dossier music de l'application
+	 */
 	public static final String SOURCE_PATH 				= System.getProperty("user.dir")+"/src/main/resources/music/";
 
+	/**
+	 * Chemin vers le dossier processed de l'application
+	 */
 	public static final String DEST_PATH 				= System.getProperty("user.dir")+"/src/main/resources/processed/";
+	
+	/**
+	 * Chemin le dossier racine de l'application
+	 */
+	public static final String RESSOURCE_DIR_PATH		= System.getProperty("user.dir");
 
+	/**
+	 * Extension accepté dans l'application
+	 */
 	public static final String EXTENSION 				= "music";
 
+	/**
+	 * Mapping de l'entete des fichiers de l'application
+	 */
 	public static final String[] FILE_HEADER_MAPPING 	= { "CodeArtiste", "NomArtiste",
 															"CodeAlbum", "NomAlbum", 
 															"NumeroChanson", "TitreChanson",

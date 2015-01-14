@@ -5,25 +5,55 @@ import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
+/**
+ * Classe qui represente la clé en BDD d'un Album.
+ * Elle implemente "Serializable", hash et equals afin d'etre utilisée comme une clé prrimaire composée
+ * @author jacademie-team
+ *
+ * ANNOTATION - MAPPING
+ * On declare la classe pour l'injecter dans comme composite-id
+ */
 @Embeddable
 public class AlbumId implements Serializable{
 	
+	/**
+	 * ANNOTATION - MAPPING
+	 * Colonne "ALBUM_ID_PK_ALBUM"
+	 */
 	@Column(name = "ALBUM_ID_PK_ALBUM")
 	private Integer idAlbum;
 	
+	/**
+	 * ANNOTATION - MAPPING
+	 * Colonne "ALBUM_ID_PK_ARTISTE"
+	 */
 	@Column(name = "ALBUM_ID_PK_ARTISTE")
 	private Integer idArtiste;
 	
 
-	public AlbumId() {
-		super();
-	}
-
+	/**
+	 * Constructeur avec parametres de la classe AlbumId.
+	 * @param Integer idAlbum		: codeAlbum
+	 * @param Integer idArtiste		: codeArtiste
+	 */
 	public AlbumId(Integer idAlbum, Integer idArtiste) {
+		
 		super();
+		
 		this.idAlbum = idAlbum;
+		
 		this.idArtiste = idArtiste;
 	}
+	
+	/**
+	 * Constructeur sans parametres de la classe AlbumId
+	 */
+	public AlbumId() {
+		
+		super();
+		
+	}
+	
 
 	public Integer getIdAlbum() {
 		return idAlbum;
