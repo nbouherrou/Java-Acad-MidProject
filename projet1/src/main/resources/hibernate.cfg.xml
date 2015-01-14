@@ -5,6 +5,8 @@
 
 <hibernate-configuration>
 	<session-factory>
+	
+		<!-- Paramètres de la connexion à la BDD -->
 
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
 
@@ -12,15 +14,19 @@
 
 		<property name="hibernate.connection.username">root</property>
 
-		<property name="hibernate.connection.password">TOR</property>
-
+		<property name="hibernate.connection.password">root</property>
+		
+		<!-- Paramètre BDD et Hibernate -->
+		
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
-		<property name="show_sql">true</property>
+		<property name="show_sql">false</property>
 		
-		<property name="format_sql">true</property>
-
+		<property name="format_sql">false</property>
+		
 		<property name="hibernate.hbm2ddl.auto">update</property>
+		
+		<!-- Mapping des classes -->
 		
 		<mapping class="org.jacademie.projet1.domain.Artiste" />   
 		

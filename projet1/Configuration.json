@@ -1,5 +1,0 @@
-{
-	"user" 			: "root",
-	"password" 		: "root",
-	"url" 			: "jdbc:mysql://localhost:8889/musique"
-}

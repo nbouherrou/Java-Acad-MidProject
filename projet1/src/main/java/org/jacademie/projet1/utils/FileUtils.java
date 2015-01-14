@@ -1,10 +1,8 @@
 package org.jacademie.projet1.utils;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -18,9 +16,6 @@ import org.apache.commons.io.FilenameUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jacademie.projet1.constants.Constants;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 
 /**
@@ -171,32 +166,5 @@ public class FileUtils {
 		return success;
 	}
 	
-	/**
-	 * Lit le fichier de configuration (src/main/resources/Configuration.json) 
-	 * et le retourne comme objet JSON.
-	 * 
-	 * @return	JSONObject
-	 */
-	public static JSONObject loadConfigurationFile(){
-		
-		Path path 		= Paths.get(Constants.RESSOURCE_DIR_PATH, "Configuration.json");
-		
-		logger.info(path.toString());
-		
-	    JSONParser parser = new JSONParser();
-    
-	    Object obj = null;
-	    
-		try {
-			
-			obj = parser.parse(new FileReader(path.toString()));
-			
-		} catch (IOException | ParseException e) {
-			
-			e.printStackTrace();
-		}
-
-		return (JSONObject)obj;
-	}
 
 }

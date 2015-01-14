@@ -14,13 +14,22 @@ import org.jacademie.projet1.utils.HibernateUtils;
 
 public class Main {
 
+	/**
+	 * Champs logger pour afficher les messages 
+	 */
 	private static Logger logger = LogManager.getLogger(Main.class);
 
+	
+	
 	public static void main(String[] args) {
 
 		try {
 
-			logger.info("Welcom to MUSE-APP \n");
+			logger.info("Welcom to MUSE-APP");
+			
+			logger.info("Created by : N. BOUHERROU - O. MARIN - A. AHMED BACHA");
+			
+			// On vide la BDD des enregistrements précédents
 			
 			ArtisteDao artisteDao = new ArtisteDao();
 			
@@ -29,24 +38,29 @@ public class Main {
 			artisteDao.deleteAllArtistes();
 			
 			HibernateUtils.tearDown();
-
-			FileUtils fileUtils = new FileUtils();
 			
-			MainControl ctrl = new MainControl();
 
-			ArrayList<Path> pathList = new ArrayList<Path>();
+			FileUtils fileUtils 		= new FileUtils();
 			
-			ArrayList<Path> goodPath = new ArrayList<Path>();
+			MainControl ctrl 			= new MainControl();
 
-			pathList = fileUtils.getFilesInDirectoryWithExtension(Constants.SOURCE_PATH, Constants.EXTENSION);
-
-			goodPath = fileUtils.filterGoodFiles(pathList);
+			ArrayList<Path> pathList 	= new ArrayList<Path>();
 			
-			//goodPath = pathList;
+			ArrayList<Path> goodPath 	= new ArrayList<Path>();
+			
+			// Récupération et filtrage des bons fichiers
+
+			pathList 					= fileUtils.getFilesInDirectoryWithExtension(Constants.SOURCE_PATH, Constants.EXTENSION);
+
+			goodPath 					= fileUtils.filterGoodFiles(pathList);
+			
+
 
 			if (!goodPath.isEmpty()) {
 
 				goodPath.forEach(path -> {
+					
+					// Traitement du fichier puis déplacement dans le dossier "precessed"
 
 					ctrl.mainControl(path);
 					

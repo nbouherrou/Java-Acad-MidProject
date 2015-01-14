@@ -19,6 +19,11 @@ import org.jacademie.projet1.domain.Chanson;
 import org.jacademie.projet1.domain.ChansonId;
 import org.jacademie.projet1.utils.HibernateUtils;
 
+/**
+ * Classe qui gère la logique de l'application
+ * @author jacademie-team
+ *
+ */
 public class MainControl {
 
 	/**
@@ -26,12 +31,20 @@ public class MainControl {
 	 */
 	private static Logger logger = LogManager.getLogger(MainControl.class);
 
+	
+	/**
+	 * Fonction coeur de l'application.
+	 * 1/ parse les fichiers 
+	 * 2/ mets à jour la BDD
+	 * 
+	 * @param path		: Chemin du fichier
+	 */
 	public void mainControl(Path path) {
+		
+		// Initialisation du header CSV, parser et lecteur de fichier
+		CSVFormat csvFileFormat = CSVFormat.DEFAULT.withHeader(Constants.FILE_HEADER_MAPPING);
 
-		CSVFormat csvFileFormat = CSVFormat.DEFAULT
-				.withHeader(Constants.FILE_HEADER_MAPPING);
-
-		FileReader fileReader = null;
+		FileReader fileReader 	= null;
 
 		CSVParser csvFileParser = null;
 
@@ -42,21 +55,24 @@ public class MainControl {
 			csvFileParser = new CSVParser(fileReader, csvFileFormat);
 
 			HibernateUtils.setUp();
+			
+			// On construit nos DAO
+			ArtisteDao artisteDao 		= new ArtisteDao();
 
+			AlbumDao albumDao 			= new AlbumDao();
+
+			ChansonDao chansonDao 		= new ChansonDao();
+			
+			// Pour chaque ligne dans le fichier CSV
 			for (CSVRecord record : csvFileParser.getRecords()) {
 
-				logger.info(" ,LineSize : " + record.size()
-						+ " - isConsistent : " + record.isConsistent());
+				logger.info("LineSize : " + record.size() + " - isConsistent : " + record.isConsistent());
 
 				logger.info(record);
 
-				if (record.isConsistent()) {
-
-					ArtisteDao artisteDao 		= new ArtisteDao();
-
-					AlbumDao albumDao 			= new AlbumDao();
-
-					ChansonDao chansonDao 		= new ChansonDao();
+				if (record.isConsistent()) {				
+					
+					// initialisation des variables avec les données de la ligne
 
 					Integer codeArtiste = Integer.parseInt(record
 							.get(Constants.CODE_ARTISTE));
@@ -76,9 +92,13 @@ public class MainControl {
 					Integer dureeChanson = Integer.parseInt(record
 							.get(Constants.DUREE_CHANSON));
 					
+					// Creation des ID (Album , Chanson) 
+					
 					AlbumId 	albumID 	= new AlbumId(codeAlbum,codeArtiste);
 					
 					ChansonId 	chansonID 	= new ChansonId(numeroChanson, albumID);
+					
+					// recherche de l'artiste en BDD
 
 					Artiste artiste = new Artiste();
 
@@ -86,6 +106,7 @@ public class MainControl {
 
 					if (artiste != null) {
 						
+						// Si son nom a changé, on fait un UPDATE
 						if(!artiste.getNom().equals(nomArtiste)){
 							
 							artisteDao.updateArtiste(artiste);
@@ -93,9 +114,13 @@ public class MainControl {
 							logger.info("Artiste  details (Nom) Updated ! ");
 						}
 
+						// recherche de l'album en BDD
+						
 						Album album = albumDao.findAlbumById(albumID);
 						
 						if(album != null ){
+							
+							// Si le nom de l'abum a changé, on fait un UPDATE
 							
 							if(!album.getNom().equals(nomAlbum)){
 								
@@ -104,24 +129,29 @@ public class MainControl {
 								logger.info("Album details (Nom) Updated ! ");
 							}
 							
-							
+							// recherche de la chanson en BDD
 							Chanson chanson = chansonDao.findChansonById(chansonID);
 							
 							if(chanson != null){
 								
 								Chanson current_chanson = new Chanson(chansonID, titreChanson, dureeChanson, album );
 								
+								// Si les nom/durée de la chanson ont changé, on fait un UPDATE
 								if(!chanson.equals(current_chanson)){
 									
 									logger.info("Song  details (Titre,Duree) Updated ! ");
 									
 								}else{
 									
+									// Dans le cas ou la chanson existe en BDD
+									
 									logger.info("Nothing has change, song already exists ! ");
 								
 								}
 								
 							}else{
+								
+								// Dans le cas ou la chanson n'existe pas en BDD
 								
 								Chanson chanson1 = new Chanson();
 						
@@ -142,6 +172,8 @@ public class MainControl {
 							}
 							
 						}else{
+							
+							// Dans le cas ou l'abum n'existe pas en BDD
 
 							Chanson chanson = new Chanson();
 
@@ -168,6 +200,8 @@ public class MainControl {
 						}
 
 					} else {
+						
+						// Dans le cas ou la ligne (Artiste/Album/Chanson) n'exsite pas en BDD
 
 						Chanson chanson = new Chanson();
 
@@ -207,6 +241,8 @@ public class MainControl {
 			HibernateUtils.tearDown();
 
 		} catch (Exception e1) {
+			
+			// Erreurs lors de la lecture du fichier
 			
 			logger.info("Encountered problem in file  : " + path);
 

@@ -11812,3 +11812,145 @@
 2015-01-14 17:49:38,117 [main] INFO  org.jacademie.projet1.Main - Welcom to MUSE-APP 
 
 2015-01-14 17:49:38,974 [main] INFO  org.jacademie.projet1.Main - GoodBye !
+2015-01-14 18:29:09,885 [main] INFO  org.jacademie.projet1.Main - Welcom to MUSE-APP
+2015-01-14 18:29:09,888 [main] INFO  org.jacademie.projet1.Main - Created by : N. BOUHERROU - O. MARIN - A. AHMED BACHA
+2015-01-14 18:29:11,724 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Deleting all Artistes...
+2015-01-14 18:29:11,974 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artistes deleted : 0
+
+2015-01-14 18:29:11,981 [main] INFO  org.jacademie.projet1.utils.FileUtils - Begin getFilesInDirectoryWithExtension ....
+2015-01-14 18:29:11,982 [main] INFO  org.jacademie.projet1.utils.FileUtils - Given Directory SOURCE_PATH /Users/ahmed/Documents/workspace/Java-Acad-MidProject/projet1/src/main/resources/music/
+2015-01-14 18:29:11,982 [main] INFO  org.jacademie.projet1.utils.FileUtils - Given Filtering EXTENSION music
+2015-01-14 18:29:12,022 [main] INFO  org.jacademie.projet1.utils.FileUtils - File found : /Users/ahmed/Documents/workspace/Java-Acad-MidProject/projet1/src/main/resources/music/fichier1.music
+2015-01-14 18:29:12,023 [main] INFO  org.jacademie.projet1.utils.FileUtils - File found : /Users/ahmed/Documents/workspace/Java-Acad-MidProject/projet1/src/main/resources/music/fichier3.music
+2015-01-14 18:29:12,023 [main] INFO  org.jacademie.projet1.utils.FileUtils - End getFilesInDirectoryWithExtension
+2015-01-14 18:29:12,023 [main] INFO  org.jacademie.projet1.utils.FileUtils - In filterGoodFiles function ......
+2015-01-14 18:29:12,028 [main] INFO  org.jacademie.projet1.utils.FileUtils - Path /Users/ahmed/Documents/workspace/Java-Acad-MidProject/projet1/src/main/resources/music/fichier1.music
+2015-01-14 18:29:12,034 [main] INFO  org.jacademie.projet1.utils.FileUtils - Path /Users/ahmed/Documents/workspace/Java-Acad-MidProject/projet1/src/main/resources/music/fichier3.music
+2015-01-14 18:29:12,180 [main] INFO  org.jacademie.projet1.controller.MainControl - LineSize : 7 - isConsistent : true
+2015-01-14 18:29:12,182 [main] INFO  org.jacademie.projet1.controller.MainControl - [1, 2Pac, 1, Me Against the World, 1, Ambitionz az a Ridah, 4]
+2015-01-14 18:29:12,183 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Finding Artiste with id : 1...
+2015-01-14 18:29:12,196 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste not found
+2015-01-14 18:29:12,196 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Creating artiste : Artiste [idArtiste=1, nom=2Pac, albums=[Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4]]]]]...
+2015-01-14 18:29:12,255 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste created. 
+
+2015-01-14 18:29:12,256 [main] INFO  org.jacademie.projet1.controller.MainControl - LineSize : 7 - isConsistent : true
+2015-01-14 18:29:12,256 [main] INFO  org.jacademie.projet1.controller.MainControl - [1, 2Pac, 1, Me Against the World, 2, All Bout U, 4]
+2015-01-14 18:29:12,256 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Finding Artiste with id : 1...
+2015-01-14 18:29:12,272 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste found : Artiste [idArtiste=1, nom=2Pac, albums=[Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4]]]]]
+2015-01-14 18:29:12,272 [main] INFO  org.jacademie.projet1.dao.AlbumDao - findAlbumById albumID : AlbumId [idArtiste=1, idAlbum=1]
+2015-01-14 18:29:12,276 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album found : Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4]]]
+2015-01-14 18:29:12,277 [main] INFO  org.jacademie.projet1.dao.ChansonDao - findChansonById chansonID : ChansonId [idChanson=2, albumID=AlbumId [idArtiste=1, idAlbum=1]]
+2015-01-14 18:29:12,280 [main] INFO  org.jacademie.projet1.dao.ChansonDao - Chanson not found
+2015-01-14 18:29:12,280 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Updating Album : Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=2, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=All Bout U, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4]]]...
+2015-01-14 18:29:12,298 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album updated. 
+
+2015-01-14 18:29:12,299 [main] INFO  org.jacademie.projet1.controller.MainControl - New song added to the Album
+2015-01-14 18:29:12,299 [main] INFO  org.jacademie.projet1.controller.MainControl - LineSize : 7 - isConsistent : true
+2015-01-14 18:29:12,299 [main] INFO  org.jacademie.projet1.controller.MainControl - [1, 2Pac, 1, Me Against the World, 3, Skandalouz, 4]
+2015-01-14 18:29:12,299 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Finding Artiste with id : 1...
+2015-01-14 18:29:12,313 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste found : Artiste [idArtiste=1, nom=2Pac, albums=[Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=2, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=All Bout U, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4]]]]]
+2015-01-14 18:29:12,314 [main] INFO  org.jacademie.projet1.dao.AlbumDao - findAlbumById albumID : AlbumId [idArtiste=1, idAlbum=1]
+2015-01-14 18:29:12,321 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album found : Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=2, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=All Bout U, dureeChanson=4]]]
+2015-01-14 18:29:12,323 [main] INFO  org.jacademie.projet1.dao.ChansonDao - findChansonById chansonID : ChansonId [idChanson=3, albumID=AlbumId [idArtiste=1, idAlbum=1]]
+2015-01-14 18:29:12,326 [main] INFO  org.jacademie.projet1.dao.ChansonDao - Chanson not found
+2015-01-14 18:29:12,327 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Updating Album : Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=2, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=All Bout U, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=3, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Skandalouz, dureeChanson=4]]]...
+2015-01-14 18:29:12,337 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album updated. 
+
+2015-01-14 18:29:12,337 [main] INFO  org.jacademie.projet1.controller.MainControl - New song added to the Album
+2015-01-14 18:29:12,337 [main] INFO  org.jacademie.projet1.controller.MainControl - LineSize : 7 - isConsistent : true
+2015-01-14 18:29:12,338 [main] INFO  org.jacademie.projet1.controller.MainControl - [1, 2Pac, 1, Me Against the World, 4, No More Pain, 6]
+2015-01-14 18:29:12,338 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Finding Artiste with id : 1...
+2015-01-14 18:29:12,344 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste found : Artiste [idArtiste=1, nom=2Pac, albums=[Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=3, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Skandalouz, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=2, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=All Bout U, dureeChanson=4]]]]]
+2015-01-14 18:29:12,344 [main] INFO  org.jacademie.projet1.dao.AlbumDao - findAlbumById albumID : AlbumId [idArtiste=1, idAlbum=1]
+2015-01-14 18:29:12,349 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album found : Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=3, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Skandalouz, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=2, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=All Bout U, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4]]]
+2015-01-14 18:29:12,350 [main] INFO  org.jacademie.projet1.dao.ChansonDao - findChansonById chansonID : ChansonId [idChanson=4, albumID=AlbumId [idArtiste=1, idAlbum=1]]
+2015-01-14 18:29:12,352 [main] INFO  org.jacademie.projet1.dao.ChansonDao - Chanson not found
+2015-01-14 18:29:12,352 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Updating Album : Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=3, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Skandalouz, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=4, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=No More Pain, dureeChanson=6], Chanson [idChanson=ChansonId [idChanson=2, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=All Bout U, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4]]]...
+2015-01-14 18:29:12,362 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album updated. 
+
+2015-01-14 18:29:12,363 [main] INFO  org.jacademie.projet1.controller.MainControl - New song added to the Album
+2015-01-14 18:29:12,363 [main] INFO  org.jacademie.projet1.controller.MainControl - LineSize : 7 - isConsistent : true
+2015-01-14 18:29:12,363 [main] INFO  org.jacademie.projet1.controller.MainControl - [1, 2Pac, 2, Thug Life, 5, Stay True, 3]
+2015-01-14 18:29:12,363 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Finding Artiste with id : 1...
+2015-01-14 18:29:12,368 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste found : Artiste [idArtiste=1, nom=2Pac, albums=[Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=2, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=All Bout U, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=4, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=No More Pain, dureeChanson=6], Chanson [idChanson=ChansonId [idChanson=3, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Skandalouz, dureeChanson=4]]]]]
+2015-01-14 18:29:12,369 [main] INFO  org.jacademie.projet1.dao.AlbumDao - findAlbumById albumID : AlbumId [idArtiste=1, idAlbum=2]
+2015-01-14 18:29:12,371 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album not found
+2015-01-14 18:29:12,372 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Updating artiste : Artiste [idArtiste=1, nom=2Pac, albums=[Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=2, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=All Bout U, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=4, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=No More Pain, dureeChanson=6], Chanson [idChanson=ChansonId [idChanson=3, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Skandalouz, dureeChanson=4]]], Album [idAlbum=AlbumId [idArtiste=1, idAlbum=2], nom=Thug Life, chansons=[Chanson [idChanson=ChansonId [idChanson=5, albumID=AlbumId [idArtiste=1, idAlbum=2]], titre=Stay True, dureeChanson=3]]]]]...
+2015-01-14 18:29:12,387 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste updated. 
+
+2015-01-14 18:29:12,387 [main] INFO  org.jacademie.projet1.controller.MainControl - LineSize : 7 - isConsistent : true
+2015-01-14 18:29:12,388 [main] INFO  org.jacademie.projet1.controller.MainControl - [1, 2Pac, 2, Thug Life, 6, Bury Me a G, 4]
+2015-01-14 18:29:12,388 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Finding Artiste with id : 1...
+2015-01-14 18:29:12,395 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste found : Artiste [idArtiste=1, nom=2Pac, albums=[Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=2, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=All Bout U, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=3, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Skandalouz, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=4, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=No More Pain, dureeChanson=6]]], Album [idAlbum=AlbumId [idArtiste=1, idAlbum=2], nom=Thug Life, chansons=[Chanson [idChanson=ChansonId [idChanson=5, albumID=AlbumId [idArtiste=1, idAlbum=2]], titre=Stay True, dureeChanson=3]]]]]
+2015-01-14 18:29:12,395 [main] INFO  org.jacademie.projet1.dao.AlbumDao - findAlbumById albumID : AlbumId [idArtiste=1, idAlbum=2]
+2015-01-14 18:29:12,400 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album found : Album [idAlbum=AlbumId [idArtiste=1, idAlbum=2], nom=Thug Life, chansons=[Chanson [idChanson=ChansonId [idChanson=5, albumID=AlbumId [idArtiste=1, idAlbum=2]], titre=Stay True, dureeChanson=3]]]
+2015-01-14 18:29:12,400 [main] INFO  org.jacademie.projet1.dao.ChansonDao - findChansonById chansonID : ChansonId [idChanson=6, albumID=AlbumId [idArtiste=1, idAlbum=2]]
+2015-01-14 18:29:12,402 [main] INFO  org.jacademie.projet1.dao.ChansonDao - Chanson not found
+2015-01-14 18:29:12,402 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Updating Album : Album [idAlbum=AlbumId [idArtiste=1, idAlbum=2], nom=Thug Life, chansons=[Chanson [idChanson=ChansonId [idChanson=6, albumID=AlbumId [idArtiste=1, idAlbum=2]], titre=Bury Me a G, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=5, albumID=AlbumId [idArtiste=1, idAlbum=2]], titre=Stay True, dureeChanson=3]]]...
+2015-01-14 18:29:12,416 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album updated. 
+
+2015-01-14 18:29:12,417 [main] INFO  org.jacademie.projet1.controller.MainControl - New song added to the Album
+2015-01-14 18:29:12,418 [main] INFO  org.jacademie.projet1.controller.MainControl - LineSize : 7 - isConsistent : true
+2015-01-14 18:29:12,418 [main] INFO  org.jacademie.projet1.controller.MainControl - [1, 2Pac, 2, Thug Life, 7, Under Pressure, 4]
+2015-01-14 18:29:12,418 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Finding Artiste with id : 1...
+2015-01-14 18:29:12,423 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste found : Artiste [idArtiste=1, nom=2Pac, albums=[Album [idAlbum=AlbumId [idArtiste=1, idAlbum=1], nom=Me Against the World, chansons=[Chanson [idChanson=ChansonId [idChanson=4, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=No More Pain, dureeChanson=6], Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Ambitionz az a Ridah, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=2, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=All Bout U, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=3, albumID=AlbumId [idArtiste=1, idAlbum=1]], titre=Skandalouz, dureeChanson=4]]], Album [idAlbum=AlbumId [idArtiste=1, idAlbum=2], nom=Thug Life, chansons=[Chanson [idChanson=ChansonId [idChanson=5, albumID=AlbumId [idArtiste=1, idAlbum=2]], titre=Stay True, dureeChanson=3], Chanson [idChanson=ChansonId [idChanson=6, albumID=AlbumId [idArtiste=1, idAlbum=2]], titre=Bury Me a G, dureeChanson=4]]]]]
+2015-01-14 18:29:12,424 [main] INFO  org.jacademie.projet1.dao.AlbumDao - findAlbumById albumID : AlbumId [idArtiste=1, idAlbum=2]
+2015-01-14 18:29:12,429 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album found : Album [idAlbum=AlbumId [idArtiste=1, idAlbum=2], nom=Thug Life, chansons=[Chanson [idChanson=ChansonId [idChanson=6, albumID=AlbumId [idArtiste=1, idAlbum=2]], titre=Bury Me a G, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=5, albumID=AlbumId [idArtiste=1, idAlbum=2]], titre=Stay True, dureeChanson=3]]]
+2015-01-14 18:29:12,429 [main] INFO  org.jacademie.projet1.dao.ChansonDao - findChansonById chansonID : ChansonId [idChanson=7, albumID=AlbumId [idArtiste=1, idAlbum=2]]
+2015-01-14 18:29:12,432 [main] INFO  org.jacademie.projet1.dao.ChansonDao - Chanson not found
+2015-01-14 18:29:12,432 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Updating Album : Album [idAlbum=AlbumId [idArtiste=1, idAlbum=2], nom=Thug Life, chansons=[Chanson [idChanson=ChansonId [idChanson=6, albumID=AlbumId [idArtiste=1, idAlbum=2]], titre=Bury Me a G, dureeChanson=4], Chanson [idChanson=ChansonId [idChanson=5, albumID=AlbumId [idArtiste=1, idAlbum=2]], titre=Stay True, dureeChanson=3], Chanson [idChanson=ChansonId [idChanson=7, albumID=AlbumId [idArtiste=1, idAlbum=2]], titre=Under Pressure, dureeChanson=4]]]...
+2015-01-14 18:29:12,442 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album updated. 
+
+2015-01-14 18:29:12,442 [main] INFO  org.jacademie.projet1.controller.MainControl - New song added to the Album
+2015-01-14 18:29:12,442 [main] INFO  org.jacademie.projet1.controller.MainControl - LineSize : 7 - isConsistent : true
+2015-01-14 18:29:12,443 [main] INFO  org.jacademie.projet1.controller.MainControl - [39, Pierre, 1, Under the moon, 1, Lola, 4]
+2015-01-14 18:29:12,443 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Finding Artiste with id : 39...
+2015-01-14 18:29:12,445 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste not found
+2015-01-14 18:29:12,445 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Creating artiste : Artiste [idArtiste=39, nom=Pierre, albums=[Album [idAlbum=AlbumId [idArtiste=39, idAlbum=1], nom=Under the moon, chansons=[Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=39, idAlbum=1]], titre=Lola, dureeChanson=4]]]]]...
+2015-01-14 18:29:12,452 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste created. 
+
+2015-01-14 18:29:12,636 [main] INFO  org.jacademie.projet1.controller.MainControl - LineSize : 7 - isConsistent : true
+2015-01-14 18:29:12,636 [main] INFO  org.jacademie.projet1.controller.MainControl - [2, GArou, 3, Album, 8, chanson, 100]
+2015-01-14 18:29:12,636 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Finding Artiste with id : 2...
+2015-01-14 18:29:12,639 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste not found
+2015-01-14 18:29:12,640 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Creating artiste : Artiste [idArtiste=2, nom=GArou, albums=[Album [idAlbum=AlbumId [idArtiste=2, idAlbum=3], nom=Album, chansons=[Chanson [idChanson=ChansonId [idChanson=8, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson, dureeChanson=100]]]]]...
+2015-01-14 18:29:12,652 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste created. 
+
+2015-01-14 18:29:12,652 [main] INFO  org.jacademie.projet1.controller.MainControl - LineSize : 7 - isConsistent : true
+2015-01-14 18:29:12,653 [main] INFO  org.jacademie.projet1.controller.MainControl - [2, GArou, 3, Album, 9, chanson222, 333]
+2015-01-14 18:29:12,653 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Finding Artiste with id : 2...
+2015-01-14 18:29:12,657 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste found : Artiste [idArtiste=2, nom=GArou, albums=[Album [idAlbum=AlbumId [idArtiste=2, idAlbum=3], nom=Album, chansons=[Chanson [idChanson=ChansonId [idChanson=8, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson, dureeChanson=100]]]]]
+2015-01-14 18:29:12,657 [main] INFO  org.jacademie.projet1.dao.AlbumDao - findAlbumById albumID : AlbumId [idArtiste=2, idAlbum=3]
+2015-01-14 18:29:12,669 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album found : Album [idAlbum=AlbumId [idArtiste=2, idAlbum=3], nom=Album, chansons=[Chanson [idChanson=ChansonId [idChanson=8, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson, dureeChanson=100]]]
+2015-01-14 18:29:12,670 [main] INFO  org.jacademie.projet1.dao.ChansonDao - findChansonById chansonID : ChansonId [idChanson=9, albumID=AlbumId [idArtiste=2, idAlbum=3]]
+2015-01-14 18:29:12,672 [main] INFO  org.jacademie.projet1.dao.ChansonDao - Chanson not found
+2015-01-14 18:29:12,672 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Updating Album : Album [idAlbum=AlbumId [idArtiste=2, idAlbum=3], nom=Album, chansons=[Chanson [idChanson=ChansonId [idChanson=9, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson222, dureeChanson=333], Chanson [idChanson=ChansonId [idChanson=8, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson, dureeChanson=100]]]...
+2015-01-14 18:29:12,679 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album updated. 
+
+2015-01-14 18:29:12,679 [main] INFO  org.jacademie.projet1.controller.MainControl - New song added to the Album
+2015-01-14 18:29:12,679 [main] INFO  org.jacademie.projet1.controller.MainControl - LineSize : 7 - isConsistent : true
+2015-01-14 18:29:12,679 [main] INFO  org.jacademie.projet1.controller.MainControl - [2, GArou, 3, Album, 9, chanson333, 333]
+2015-01-14 18:29:12,680 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Finding Artiste with id : 2...
+2015-01-14 18:29:12,684 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste found : Artiste [idArtiste=2, nom=GArou, albums=[Album [idAlbum=AlbumId [idArtiste=2, idAlbum=3], nom=Album, chansons=[Chanson [idChanson=ChansonId [idChanson=8, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson, dureeChanson=100], Chanson [idChanson=ChansonId [idChanson=9, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson222, dureeChanson=333]]]]]
+2015-01-14 18:29:12,684 [main] INFO  org.jacademie.projet1.dao.AlbumDao - findAlbumById albumID : AlbumId [idArtiste=2, idAlbum=3]
+2015-01-14 18:29:12,687 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album found : Album [idAlbum=AlbumId [idArtiste=2, idAlbum=3], nom=Album, chansons=[Chanson [idChanson=ChansonId [idChanson=9, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson222, dureeChanson=333], Chanson [idChanson=ChansonId [idChanson=8, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson, dureeChanson=100]]]
+2015-01-14 18:29:12,688 [main] INFO  org.jacademie.projet1.dao.ChansonDao - findChansonById chansonID : ChansonId [idChanson=9, albumID=AlbumId [idArtiste=2, idAlbum=3]]
+2015-01-14 18:29:12,690 [main] INFO  org.jacademie.projet1.dao.ChansonDao - Chanson found : Chanson [idChanson=ChansonId [idChanson=9, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson222, dureeChanson=333]
+2015-01-14 18:29:12,690 [main] INFO  org.jacademie.projet1.controller.MainControl - Song  details (Titre,Duree) Updated ! 
+2015-01-14 18:29:12,690 [main] INFO  org.jacademie.projet1.controller.MainControl - LineSize : 7 - isConsistent : true
+2015-01-14 18:29:12,690 [main] INFO  org.jacademie.projet1.controller.MainControl - [2, GArou, 2, EditionSpeciale, 1, Muse Drum III , 5]
+2015-01-14 18:29:12,691 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Finding Artiste with id : 2...
+2015-01-14 18:29:12,696 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste found : Artiste [idArtiste=2, nom=GArou, albums=[Album [idAlbum=AlbumId [idArtiste=2, idAlbum=3], nom=Album, chansons=[Chanson [idChanson=ChansonId [idChanson=9, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson222, dureeChanson=333], Chanson [idChanson=ChansonId [idChanson=8, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson, dureeChanson=100]]]]]
+2015-01-14 18:29:12,696 [main] INFO  org.jacademie.projet1.dao.AlbumDao - findAlbumById albumID : AlbumId [idArtiste=2, idAlbum=2]
+2015-01-14 18:29:12,698 [main] INFO  org.jacademie.projet1.dao.AlbumDao - Album not found
+2015-01-14 18:29:12,698 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Updating artiste : Artiste [idArtiste=2, nom=GArou, albums=[Album [idAlbum=AlbumId [idArtiste=2, idAlbum=2], nom=EditionSpeciale, chansons=[Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=2, idAlbum=2]], titre=Muse Drum III , dureeChanson=5]]], Album [idAlbum=AlbumId [idArtiste=2, idAlbum=3], nom=Album, chansons=[Chanson [idChanson=ChansonId [idChanson=9, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson222, dureeChanson=333], Chanson [idChanson=ChansonId [idChanson=8, albumID=AlbumId [idArtiste=2, idAlbum=3]], titre=chanson, dureeChanson=100]]]]]...
+2015-01-14 18:29:12,708 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste updated. 
+
+2015-01-14 18:29:12,708 [main] INFO  org.jacademie.projet1.controller.MainControl - LineSize : 7 - isConsistent : true
+2015-01-14 18:29:12,709 [main] INFO  org.jacademie.projet1.controller.MainControl - [19, McQueen, 1, SamsQueenSky, 1, Honest, 455]
+2015-01-14 18:29:12,709 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Finding Artiste with id : 19...
+2015-01-14 18:29:12,712 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste not found
+2015-01-14 18:29:12,712 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Creating artiste : Artiste [idArtiste=19, nom=McQueen, albums=[Album [idAlbum=AlbumId [idArtiste=19, idAlbum=1], nom=SamsQueenSky, chansons=[Chanson [idChanson=ChansonId [idChanson=1, albumID=AlbumId [idArtiste=19, idAlbum=1]], titre=Honest, dureeChanson=455]]]]]...
+2015-01-14 18:29:12,721 [main] INFO  org.jacademie.projet1.dao.ArtisteDao - Artiste created. 
+
+2015-01-14 18:29:12,725 [main] INFO  org.jacademie.projet1.Main - GoodBye !
