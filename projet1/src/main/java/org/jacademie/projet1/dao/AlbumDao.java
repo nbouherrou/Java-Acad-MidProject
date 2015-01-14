@@ -6,16 +6,14 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
 import org.jacademie.projet1.domain.Album;
-import org.jacademie.projet1.domain.Artiste;
+import org.jacademie.projet1.domain.AlbumId;
 import org.jacademie.projet1.utils.HibernateUtils;
 
 public class AlbumDao {
 
 	private static Logger logger = LogManager.getLogger(AlbumDao.class);
-	
-	
+
 	public void createAlbum(Album album) throws Exception {
 
 		logger.info("Creating album : " + album + "...");
@@ -56,47 +54,36 @@ public class AlbumDao {
 
 		return result;
 	}
-	
-	
-	public Album findAlbumByIdAndIdChanson(int id, int idChanson) throws Exception {
 
-		logger.info("Finding Album with id : " + id + "...");
-		
-		Album album = new Album();
+	public Album findAlbumByIdAndIdArtiste(int id, int idArtiste)
+			throws Exception {
+
+		logger.info("findAlbumByIdAndIdArtiste album_id : " + id
+				+ ", artiste_id : " + idArtiste);
 
 		Session session = HibernateUtils.getSession();
 
 		session.beginTransaction();
-
-		Criteria criteria = session.createCriteria(Album.class);
 		
-		criteria.createCriteria("chansons", "s");
+		AlbumId albumID  = new AlbumId(id,idArtiste);
 		
-		criteria.add(Restrictions.eq("id", id));
+		Album album = (Album) session.get(Album.class, albumID);
 		
-		criteria.add(Restrictions.eq("s.id", idChanson));
-		
-		List<Album> result = criteria.list();
-
 		session.getTransaction().commit();
 
 		HibernateUtils.closeSession(session);
 
-		if (!result.isEmpty()) {
+		if (album != null) {
+
+			logger.info("Album found : " + album);
 			
-			logger.info("Album found : " + result);
-			
-			album = result.get(0);
 		} else {
-			logger.info("Album not found");
 			
-			album = null;
+			logger.info("Album not found");
 		}
 
 		return album;
 	}
-	
-	
 
 	public void updateAlbum(Album album) throws Exception {
 
@@ -148,7 +135,7 @@ public class AlbumDao {
 
 		List<Album> result = criteria.list();
 
-		result.forEach( resultat -> session.delete(resultat) );
+		result.forEach(resultat -> session.delete(resultat));
 
 		session.getTransaction().commit();
 
@@ -158,20 +145,19 @@ public class AlbumDao {
 
 		return result;
 	}
-	
-	
+
 	public static void main(String[] args) {
-		
+
 		try {
-			
+
 			HibernateUtils.setUp();
-			
+
 			AlbumDao albumDao = new AlbumDao();
-			
-			albumDao.findAlbumByIdAndIdChanson(1, 1);
-			
+
+			albumDao.findAlbumByIdAndIdArtiste(1, 1);
+
 			HibernateUtils.tearDown();
-			
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

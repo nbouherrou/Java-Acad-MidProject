@@ -1,13 +1,27 @@
 package org.jacademie.projet1.domain;
 
-public class Chanson {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "CHANSON")
+public class Chanson implements java.io.Serializable {
 	
-	private Integer idChanson;
+	@Id
+	@Column(name = "CHANSON_ID")
+	private ChansonId chansonID;
 	
+	@Column(name = "TITRE") 
 	private String titre;
 	
+	@Column(name = "DUREE") 
 	private Integer dureeChanson;
 	
+	@ManyToOne
 	private Album album;
 	
 
@@ -16,14 +30,11 @@ public class Chanson {
 	}
 
 	
-	
-
-
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Chanson [idChanson=");
-		builder.append(idChanson);
+		builder.append(chansonID.toString());
 		builder.append(", titre=");
 		builder.append(titre);
 		builder.append(", dureeChanson=");
@@ -31,20 +42,6 @@ public class Chanson {
 		builder.append("]");
 		return builder.toString();
 	}
-
-
-
-
-
-	public Integer getIdChanson() {
-		return idChanson;
-	}
-
-
-	public void setIdChanson(Integer idChanson) {
-		this.idChanson = idChanson;
-	}
-
 
 	public String getTitre() {
 		return titre;
@@ -65,17 +62,26 @@ public class Chanson {
 		this.dureeChanson = dureeChanson;
 	}
 
-
+	@Transient
 	public Album getAlbum() {
 		return album;
 	}
 
-
+	@Transient
 	public void setAlbum(Album album) {
 		this.album = album;
 	}
 
-	
+
+	public ChansonId getChansonID() {
+		return chansonID;
+	}
+
+
+	public void setChansonID(ChansonId chansonID) {
+		this.chansonID = chansonID;
+	}
+
 	
 
 

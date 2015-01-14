@@ -4,17 +4,26 @@
 
 <hibernate-mapping package="org.jacademie.projet1.domain">
 	<class name="Album" table="ALBUM">
-
-		<id name="idAlbum" type="integer">
-			<column name="ID" />
-		</id>
+	
+		<composite-id>
+			<key-property name="idAlbum" column="ID" type="integer" />
+			<key-property name="artiste" column="ID_ARTISTE"/>
+		</composite-id>
+		
+		<properties name="AlbumKey" unique="true">
+            <property name="idAlbum" />
+            <property name="artiste"/>
+        </properties>
 
 		<property name="nom" type="string">
 			<column name="NOM" length="80" not-null="true" />
 		</property>
-	
+
 		<set name="chansons" lazy="false" cascade="all,delete-orphan">
-			<key column="ID_ALBUM" not-null="true"/>
+			<key>
+				<column name="ID_ALBUM" />
+				<column name="ID_ARTISTE" />
+			</key>
 			<one-to-many class="Chanson" />
 		</set>
 

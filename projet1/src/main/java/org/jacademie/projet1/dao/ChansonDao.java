@@ -5,10 +5,11 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.hibernate.Criteria;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
-import org.hibernate.criterion.Restrictions;
 import org.jacademie.projet1.domain.Album;
 import org.jacademie.projet1.domain.Chanson;
+import org.jacademie.projet1.domain.ChansonId;
 import org.jacademie.projet1.utils.HibernateUtils;
 
 public class ChansonDao {
@@ -54,6 +55,34 @@ public class ChansonDao {
 		}
 
 		return result;
+	}
+	
+	public Chanson findChansonByIdAndIdAlbum(int id, int idAlbum) throws Exception {
+		
+		logger.info("findChansonByIdAndIdAlbum chanson_id : " + id + ", album_id : "+ idAlbum);
+		
+		ChansonId chansonID = new ChansonId(id, idAlbum);
+
+		Session session = HibernateUtils.getSession();
+
+		session.beginTransaction();
+		
+		Chanson chanson = (Chanson) session.get(Chanson.class, chansonID);
+
+		session.getTransaction().commit();
+
+		HibernateUtils.closeSession(session);
+
+		if (chanson != null) {
+
+			logger.info("Chanson found : " + chanson);
+			
+		} else {
+			
+			logger.info("Chanson not found");
+		}
+
+		return chanson;
 	}
 	
 
